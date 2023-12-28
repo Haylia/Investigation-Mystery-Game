@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -8,6 +9,8 @@ public class ObjectScript : MonoBehaviour
 
     //public string[] fingerprints;
     private GameObject itemPanel;
+    private Item item;
+    private ItemInfo itemInfo;
 
     public void OnMouseDown()
     {
@@ -16,6 +19,14 @@ public class ObjectScript : MonoBehaviour
         //show menu
         //panel.SetActive
         //if its the object
+
+        item = gameObject.GetComponent<Item>();
+        itemInfo = gameObject.GetComponent<ItemInfo>();
+
+        item.itemClicked();
+        item.Inspect();
+
+
         if (itemPanel.activeSelf)
         {
             itemPanel.SetActive(false);
@@ -24,6 +35,12 @@ public class ObjectScript : MonoBehaviour
         {
             itemPanel.SetActive(true);
         }
+
+        Debug.Log(item.currentInspect);
+        GameObject.Find("ObjectDesc").GetComponent<TextMeshProUGUI>().SetText(item.currentInspect);
+        GameObject.Find("ObjectName").GetComponent<TextMeshProUGUI>().SetText(itemInfo.getName());
+
+        GameObject.Find("PickUp").SetActive(itemInfo.canPickUp);
     }
 
     // Start is called before the first frame update
