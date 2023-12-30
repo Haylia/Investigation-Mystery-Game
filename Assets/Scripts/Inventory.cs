@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Inventory : MonoBehaviour // shows picked up items
 {
-    public ProtagInfo protagInfo;
+    private ProtagInfo protagInfo;
+    private GameObject inventoryView;
+    private GameObject inventoryContent;
 
     List<GameObject> inventory = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
-        
+        protagInfo = GameObject.Find("Protag").GetComponent<ProtagInfo>();
+        inventoryView = GameObject.Find("InventoryView");
+        inventoryContent = GameObject.Find("InventoryContent");
     }
 
     // Update is called once per frame
@@ -19,8 +24,16 @@ public class Inventory : MonoBehaviour // shows picked up items
         
     }
 
-    void onOpen()
+    public void onOpen()
     {
         inventory = protagInfo.getInventory();
+
+        foreach (GameObject item in inventory)
+        {
+            if (item.transform.parent != inventoryContent.transform)
+            {
+                item.transform.SetParent(inventoryContent.transform);
+            }
+        }
     }
 }

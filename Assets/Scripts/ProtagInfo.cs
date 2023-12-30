@@ -16,7 +16,7 @@ public class ProtagInfo : MonoBehaviour
     List<string> presentedEvidence = new List<string>();
 
     Dictionary<string,string> testimony = new Dictionary<string,string>();
-    Dictionary<GameObject, string> characterToTestimony = new Dictionary<GameObject, string>();
+    Dictionary<GameObject, List<string>> characterToTestimony = new Dictionary<GameObject, List<string>>();
 
     //character to dict item to response
     Dictionary<GameObject, Dictionary<string, string>> accuseDialogue = new Dictionary<GameObject, Dictionary<string, string>>();
@@ -44,7 +44,7 @@ public class ProtagInfo : MonoBehaviour
         return testimony;
     }
 
-    public Dictionary<GameObject, string> getCharacterToTestimony()
+    public Dictionary<GameObject, List<string>> getCharacterToTestimony()
     {
         return characterToTestimony;
     }
@@ -82,7 +82,20 @@ public class ProtagInfo : MonoBehaviour
             testimony.Add(testimonyID, testimonyContents);
             evidence.Add(testimonyID);
             allFlags.Add("heard" + testimonyID, true);
-            characterToTestimony.Add(gameObject,testimonyID);
+
+            if (characterToTestimony.ContainsKey(gameObject))
+            {
+                var t = characterToTestimony[character];
+                t.Add(testimonyID);
+
+                characterToTestimony.Add(character, t);
+            }
+            else
+            {
+                List<string> t = new List<string>();
+                t.Add(testimonyID);
+                characterToTestimony.Add(character, t);
+            }
         }
     }
 

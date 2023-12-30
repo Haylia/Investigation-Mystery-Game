@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    public ProtagInfo protagInfo;
+    private ProtagInfo protagInfo;
     private CharacterInfo characterInfo;
 
     public float pressure = 0;
@@ -33,6 +33,8 @@ public class Character : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        protagInfo = GameObject.Find("Protag").GetComponent<ProtagInfo>();
+
         characterInfo = gameObject.GetComponent<CharacterInfo>();
         pressureResponse = characterInfo.getPressureResponse();
 

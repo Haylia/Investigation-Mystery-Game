@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public GameObject notebook;
-    public ProtagInfo protagInfo;
+    //public GameObject notebook;
+    private ProtagInfo protagInfo;
     private ItemInfo itemInfo;
 
     List<string> availableInteractions = new List<string>();
@@ -23,6 +23,7 @@ public class Item : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        protagInfo = GameObject.Find("Protag").GetComponent<ProtagInfo>();
         itemInfo = gameObject.GetComponent<ItemInfo>();
         allInspect = itemInfo.getAllInspect();
         allCombine = itemInfo.getAllCombine();
@@ -34,9 +35,8 @@ public class Item : MonoBehaviour
         //only need to check flags once per click
         itemFlags = itemInfo.getAllFlags();
 
-        ///////////////////////////////////////////
-        //protagFlags = protagInfo.getAllFlags();//
-        ///////////////////////////////////////////
+
+        protagFlags = protagInfo.getAllFlags();
         availableInteractions.Clear();
 
         if (itemFlags["canPickUp"])
@@ -75,7 +75,7 @@ public class Item : MonoBehaviour
                     currentInspect = allInspect[flag];
                 }
             }
-            /*////////////////////////////
+
             if (protagFlags.ContainsKey(flag))
             {
                 if (protagFlags[flag])
@@ -83,7 +83,7 @@ public class Item : MonoBehaviour
                     currentInspect = allInspect[flag];
                 }
             }
-            *////////////////////////////
+
         }
         if (currentInspect.Equals(""))
         {
@@ -125,9 +125,9 @@ public class Item : MonoBehaviour
             //add item to inventory
             //remove from map
             
-            //////////////////////////////////////
-            //protagInfo.pickUpItem(gameObject);//
-            //////////////////////////////////////
+
+            protagInfo.pickUpItem(gameObject);
+
             itemInfo.setFlag("pickedUp", true);
             itemInfo.setFlag("canPickUp", false);
         }
