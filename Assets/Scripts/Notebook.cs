@@ -4,10 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Notebook : MonoBehaviour //shows recorded testimony
 {
+
+    private GameObject nextPage;
+    private GameObject previousPage;
+
+    private GameObject pageDisplay;
 
     private ProtagInfo protagInfo;
 
@@ -31,7 +37,11 @@ public class Notebook : MonoBehaviour //shows recorded testimony
     // Start is called before the first frame update
     void Start()
     {
-        protagInfo = GameObject.Find("Protag").GetComponent<ProtagInfo>();
+        //protagInfo = GameObject.Find("Protag").GetComponent<ProtagInfo>();
+        protagInfo = gameObject.GetComponentInParent<ProtagInfo>();
+        pageDisplay = transform.Find("PageDisplay").gameObject;
+        nextPage = transform.Find("NextPage").gameObject;
+        previousPage = transform.Find("PreviousPage").gameObject;
         // set up testmony id to display id
         // set up character names
     }
@@ -56,29 +66,29 @@ public class Notebook : MonoBehaviour //shows recorded testimony
 
     void displayPages()
     {
-        GameObject pagesDisplay = GameObject.Find("PageDisplay");
+        //GameObject pagesDisplay = GameObject.Find("PageDisplay");
 
         if (currentPage <= nameToPage.Count + 1) //show 2 pages
         {
             var p1 = nameToPage[characterNames[currentPage]];
             p1.SetActive(true);
-            p1.transform.SetParent(pagesDisplay.transform);
+            p1.transform.SetParent(pageDisplay.transform);
             var p2 = nameToPage[characterNames[currentPage + 1]];
             p2.SetActive(true);
-            p2.transform.SetParent(pagesDisplay.transform);
+            p2.transform.SetParent(pageDisplay.transform);
         }
         else if (currentPage <= nameToPage.Count) // show 1 page
         {
             var p1 = nameToPage[characterNames[currentPage]];
             p1.SetActive(true);
-            p1.transform.SetParent(pagesDisplay.transform);
+            p1.transform.SetParent(pageDisplay.transform);
         }
     }
 
     void hidePages()
     {
-        GameObject pagesDisplay = GameObject.Find("PageDisplay");
-        pagesDisplay.transform.DetachChildren();
+        //GameObject pagesDisplay = GameObject.Find("PageDisplay");
+        pageDisplay.transform.DetachChildren();
 
         if (currentPage <= nameToPage.Count + 1) //show 2 pages
         {
@@ -137,11 +147,13 @@ public class Notebook : MonoBehaviour //shows recorded testimony
     {
         hidePages();
         currentPage += 2;
-        GameObject.Find("PreviousPage").SetActive(true);
+        //GameObject.Find("PreviousPage").SetActive(true);
+        previousPage.SetActive(true);
 
         if (currentPage >= nameToPage.Count)
         {
-            GameObject.Find("NextPage").SetActive(false);
+            //GameObject.Find("NextPage").SetActive(false);
+            nextPage.SetActive(false);
         }
 
         displayPages();
@@ -151,11 +163,13 @@ public class Notebook : MonoBehaviour //shows recorded testimony
     {
         hidePages();
         currentPage -= 2;
-        GameObject.Find("NextPage").SetActive(true);
+        //GameObject.Find("NextPage").SetActive(true);
+        nextPage.SetActive(true);
 
         if (currentPage <= 1)
         {
-            GameObject.Find("PreviousPage").SetActive(false);
+            //GameObject.Find("PreviousPage").SetActive(false);
+            previousPage.SetActive(false);
         }
 
         displayPages();
@@ -182,8 +196,17 @@ public class Notebook : MonoBehaviour //shows recorded testimony
                 displayId.transform.SetParent(container.transform);
                 testimonyContent.transform.SetParent(container.transform);
 
+                container.AddComponent<Selectable>();
+                container.AddComponent<Testimony>();
+                container.GetComponent<Testimony>().id = id;
+
                 idToContainer.Add(id, container);
             }
         }
+    }
+
+    void selected()
+    {
+
     }
 }

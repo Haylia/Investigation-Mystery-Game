@@ -11,6 +11,7 @@ public class ObjectScript : MonoBehaviour
     private GameObject itemPanel;
     private Item item;
     private ItemInfo itemInfo;
+    private ProtagInfo protageInfo;
 
     public void OnMouseDown()
     {
@@ -20,8 +21,9 @@ public class ObjectScript : MonoBehaviour
         //panel.SetActive
         //if its the object
 
-        item = gameObject.GetComponent<Item>();
-        itemInfo = gameObject.GetComponent<ItemInfo>();
+        //item = gameObject.GetComponent<Item>();
+        //itemInfo = gameObject.GetComponent<ItemInfo>();
+
 
         item.itemClicked();
         item.Inspect();
@@ -37,18 +39,23 @@ public class ObjectScript : MonoBehaviour
         }
 
         Debug.Log(item.currentInspect);
-        GameObject.Find("ObjectDesc").GetComponent<TextMeshProUGUI>().SetText(item.currentInspect);
-        GameObject.Find("ObjectName").GetComponent<TextMeshProUGUI>().SetText(itemInfo.getName());
+        transform.Find("ObjectDesc").gameObject.GetComponent<TextMeshProUGUI>().SetText(item.currentInspect);
+        transform.Find("ObjectName").gameObject.GetComponent<TextMeshProUGUI>().SetText(itemInfo.getName());
 
-        GameObject.Find("PickUp").SetActive(itemInfo.canPickUp);
+        transform.Find("PickUp").gameObject.SetActive(itemInfo.canPickUp);
+
+        transform.Find("Present").gameObject.SetActive(protageInfo.accusing);
     }
 
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("object created");
-        itemPanel = GameObject.Find("ItemInfo");
+        itemPanel = transform.Find("ItemInfo").gameObject;
         itemPanel.SetActive(false);
+        protageInfo = transform.Find("Protag").gameObject.GetComponent<ProtagInfo>();
+        item = gameObject.GetComponent<Item>();
+        itemInfo = gameObject.GetComponent<ItemInfo>();
     }
 
     // Update is called once per frame

@@ -6,19 +6,26 @@ public class Protag : MonoBehaviour
 {
     private GameObject notebook;
     private GameObject inventory;
+    private GameObject menu;
     // Start is called before the first frame update
     void Start()
     {
-        notebook = GameObject.Find("Notebook");
-        notebook.SetActive(false);
-        inventory = GameObject.Find("Inventory");
-        inventory.SetActive(false);
+        notebook = transform.Find("Notebook").gameObject;
+        //notebook.SetActive(false);
+        inventory = transform.Find("Inventory").gameObject;
+        //inventory.SetActive(false);
+        menu = transform.Find("ProtagMenu").gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void OnMouseDown()
+    {
+        openMenu();
     }
 
     public void openNotebook()
@@ -41,5 +48,15 @@ public class Protag : MonoBehaviour
     public void closeInventory()
     {
         inventory.SetActive(false);
+    }
+
+    public void openMenu()
+    {
+        menu.SetActive(true);
+    }
+
+    public void closeMenu()
+    {
+        menu.SetActive(false);
     }
 }

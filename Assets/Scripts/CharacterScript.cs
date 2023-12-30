@@ -18,16 +18,16 @@ public class CharacterScript : MonoBehaviour
         if (characterMenu.activeSelf)
         {
             characterMenu.SetActive(false);
-            GameObject.Find("DialogueOptions").SetActive(false);
-            GameObject.Find("Next").SetActive(false);
-            GameObject.Find("Record").SetActive(false);
-            GameObject.Find("Close").SetActive(false);
-            GameObject.Find("EvidenceSelect").SetActive(false);
-            GameObject.Find("EndAccusation").SetActive(false);
         }
         else
         {
             characterMenu.SetActive(true);
+            transform.Find("DialogueOptions").gameObject.SetActive(false);
+            transform.Find("Next").gameObject.SetActive(false);
+            transform.Find("Record").gameObject.SetActive(false);
+            transform.Find("Close").gameObject.SetActive(false);
+            transform.Find("EvidenceSelect").gameObject.SetActive(false);
+            transform.Find("EndAccusation").gameObject.SetActive(false);
         }
 
 

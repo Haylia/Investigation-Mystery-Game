@@ -12,13 +12,15 @@ public class Accuse : MonoBehaviour
     private float pressureNow;
     private int turns;
     private bool waiting;
+    private GameObject protagMenu;
     // Start is called before the first frame update
     void Start()
     {
         character = gameObject.GetComponentInParent<Character>();
-        dialogeBox = GameObject.Find("DialogueBox");
-        evidenceSelect = GameObject.Find("EvidenceSelect");
+        dialogeBox = character.transform.Find("DialogueBox").gameObject;
+        evidenceSelect = transform.Find("EvidenceSelect").gameObject;
         waiting = false;
+        protagMenu = GameObject.Find("ProtagMenu");
     }
 
     // Update is called once per frame
@@ -29,6 +31,8 @@ public class Accuse : MonoBehaviour
 
     public void accuseStart()
     {
+        //GameObject.Find("Protag").GetComponent<ProtagInfo>().accusing = true;
+
         character.accuse();
         dialogeBox.GetComponent<TextMeshProUGUI>().SetText(character.currentResponse);
 
@@ -50,9 +54,11 @@ public class Accuse : MonoBehaviour
             //evidence selection
             evidenceSelect.SetActive(true);
             waiting = true;
+            protagMenu.SetActive(true);
+            protagMenu.transform.Find("ClosePMenu").gameObject.SetActive(false);
             yield return new WaitWhile(() => waiting);
             //wait for protag dialogue to end
-
+            protagMenu.SetActive(false);
             //turns goes up if pressure has decreased or little to no change
             if (System.Math.Floor(pressureNow) <= System.Math.Floor(pressureBefore))
             {
@@ -67,7 +73,7 @@ public class Accuse : MonoBehaviour
             //character response
             dialogeBox.GetComponent<TextMeshProUGUI>().SetText(character.currentResponse);
         }
-        evidenceSelect.GetComponent<EvidenceSelect>().clear();
+        //evidenceSelect.GetComponent<EvidenceSelect>().clear();
         if (pressureNow > 5)
         {
             character.successfulAccusation();

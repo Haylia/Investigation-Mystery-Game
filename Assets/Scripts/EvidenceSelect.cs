@@ -31,7 +31,7 @@ public class EvidenceSelect : MonoBehaviour
     }
 
 
-    private void selected(string name)
+    public void selected(string name)
     {
         accuse.evidenceSelected(name);
     }

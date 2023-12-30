@@ -7,11 +7,19 @@ public class DialogueQueue : MonoBehaviour
 {
 
     public Stack<string> dialogueQueue = new Stack<string>();
-    private GameObject dialogueBox;
+    //private GameObject dialogueBox;
+
+    private GameObject nextButton;
+    private GameObject recordButton;
+    private GameObject closeButton;
     // Start is called before the first frame update
     void Start()
     {
-        dialogueBox = GameObject.Find("DialogueBox");
+        //dialogueBox = GameObject.Find("DialogueBox");
+
+        nextButton = transform.Find("Next").gameObject;
+        recordButton = transform.Find("Record").gameObject;
+        closeButton = transform.Find("CloseDialogue").gameObject;
     }
 
     // Update is called once per frame
@@ -24,18 +32,20 @@ public class DialogueQueue : MonoBehaviour
     {
         if (dialogueQueue.TryPeek(out string result))
         {
-            dialogueBox.GetComponent<TextMeshProUGUI>().SetText(dialogueQueue.Pop());
+            gameObject.GetComponent<TextMeshProUGUI>().SetText(dialogueQueue.Pop());
         }
         else
         {
-            GameObject.Find("Next").SetActive(false);
-            GameObject.Find("CloseDialogue").SetActive(true);
+            //GameObject.Find("Next").SetActive(false);
+            // GameObject.Find("CloseDialogue").SetActive(true);
+            closeButton.SetActive(true);
         }
     }
 
     public void close()
     {
         gameObject.GetComponentInParent<Character>().talkEnd();
-        GameObject.Find("Record").SetActive(false);
+        recordButton.SetActive(false);
+        closeButton.SetActive(false);
     }
 }

@@ -26,7 +26,7 @@ public class Character : MonoBehaviour
 
     public string currentResponse = "";
 
-    string currentShowItem = "";
+    //string currentShowItem = "";
 
     //string currentEvidence = "";
     
@@ -80,7 +80,7 @@ public class Character : MonoBehaviour
         currentResponse = "";
     }
 
-    void show()
+    public void show(string currentShowItem)
     {
         //wait for player to select item to show and get item name
         if (allShow.ContainsKey(currentShowItem))
@@ -94,7 +94,7 @@ public class Character : MonoBehaviour
 
     }
 
-    void showEnd()
+    public void showEnd(string currentShowItem)
     {
         currentResponse = "";
         characterInfo.setFlag("shown" + currentShowItem, true);

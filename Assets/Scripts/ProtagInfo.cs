@@ -6,26 +6,34 @@ public class ProtagInfo : MonoBehaviour
 {
 
     int lives = 2;
+    public bool accusing;
 
-    Dictionary<string, bool> allFlags = new Dictionary<string, bool>();
-    Dictionary<string, bool> itemFlags = new Dictionary<string, bool>();
+    Dictionary<string, bool> allFlags;
+    Dictionary<string, bool> itemFlags;
 
     List<GameObject> inventory = new List<GameObject>();
 
-    List<string> evidence = new List<string>();
-    List<string> presentedEvidence = new List<string>();
+    List<string> evidence;
+    List<string> presentedEvidence;
 
-    Dictionary<string,string> testimony = new Dictionary<string,string>();
-    Dictionary<GameObject, List<string>> characterToTestimony = new Dictionary<GameObject, List<string>>();
-
+    Dictionary<string, string> testimony;
+    Dictionary<GameObject, List<string>> characterToTestimony;
     //character to dict item to response
-    Dictionary<GameObject, Dictionary<string, string>> accuseDialogue = new Dictionary<GameObject, Dictionary<string, string>>();
-    string currentAccuseDialogue = "";
+    Dictionary<GameObject, Dictionary<string, string>> accuseDialogue;
+    string currentAccuseDialogue;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        accusing = false;
+        allFlags = new Dictionary<string, bool>();
+        itemFlags = new Dictionary<string, bool>();
+        evidence = new List<string>();
+        presentedEvidence = new List<string>();
+        testimony = new Dictionary<string, string>();
+        characterToTestimony = new Dictionary<GameObject, List<string>>();
+        accuseDialogue = new Dictionary<GameObject, Dictionary<string, string>>();
+        currentAccuseDialogue = "";
     }
 
     // Update is called once per frame
@@ -102,6 +110,7 @@ public class ProtagInfo : MonoBehaviour
     public void accusationBegin()
     {
         presentedEvidence.Clear();
+        accusing = true;
     }
 
     public void presentEvidence(string evidence, GameObject character)

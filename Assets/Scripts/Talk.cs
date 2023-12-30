@@ -12,14 +12,16 @@ public class Talk : MonoBehaviour
     //private GameObject optionPrefab;
     private GameObject dialogeBox;
     private GameObject dialogueOptions;
+    private GameObject next;
+    private GameObject record;
 
     // Start is called before the first frame update
     void Start()
     {
         character = gameObject.GetComponentInParent<Character>();
         //optionPrefab = GameObject.Find("Option");
-        dialogeBox = GameObject.Find("DialogueBox");
-        dialogueOptions = GameObject.Find("DialogueOptions");
+        dialogeBox = character.transform.Find("DialogueBox").gameObject;
+        dialogueOptions = character.transform.Find("DialogueOptions").gameObject;
     }
 
     // Update is called once per frame
@@ -39,8 +41,8 @@ public class Talk : MonoBehaviour
 
         dialogue();
 
-        GameObject.Find("Next").SetActive(true);
-        GameObject.Find("Record").SetActive(true);
+        dialogeBox.transform.Find("Next").gameObject.SetActive(true);
+        dialogeBox.transform.Find("Record").gameObject.SetActive(true);
     }
 
     void generateOptions(List<string> options)
