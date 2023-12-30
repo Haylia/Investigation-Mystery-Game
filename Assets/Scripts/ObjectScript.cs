@@ -39,21 +39,21 @@ public class ObjectScript : MonoBehaviour
         }
 
         Debug.Log(item.currentInspect);
-        transform.Find("ObjectDesc").gameObject.GetComponent<TextMeshProUGUI>().SetText(item.currentInspect);
-        transform.Find("ObjectName").gameObject.GetComponent<TextMeshProUGUI>().SetText(itemInfo.getName());
+        transform.Find("Canvas/ItemInfo/ObjectDesc").gameObject.GetComponent<TextMeshProUGUI>().SetText(item.currentInspect);
+        transform.Find("Canvas/ItemInfo/ObjectName").gameObject.GetComponent<TextMeshProUGUI>().SetText(itemInfo.getName());
 
-        transform.Find("PickUp").gameObject.SetActive(itemInfo.canPickUp);
+        transform.Find("Canvas/ItemInfo/PickUp").gameObject.SetActive(itemInfo.canPickUp);
 
-        transform.Find("Present").gameObject.SetActive(protageInfo.accusing);
+        transform.Find("Canvas/ItemInfo/Present").gameObject.SetActive(protageInfo.accusing);
     }
 
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("object created");
-        itemPanel = transform.Find("ItemInfo").gameObject;
+        itemPanel = transform.Find("Canvas/ItemInfo").gameObject;
         itemPanel.SetActive(false);
-        protageInfo = transform.Find("Protag").gameObject.GetComponent<ProtagInfo>();
+        protageInfo = GameObject.Find("Protag").GetComponent<ProtagInfo>();
         item = gameObject.GetComponent<Item>();
         itemInfo = gameObject.GetComponent<ItemInfo>();
     }
@@ -62,5 +62,10 @@ public class ObjectScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void closeMenu()
+    {
+        itemPanel.SetActive(false);
     }
 }

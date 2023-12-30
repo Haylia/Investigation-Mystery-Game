@@ -10,11 +10,12 @@ public class Protag : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        notebook = transform.Find("Notebook").gameObject;
-        //notebook.SetActive(false);
-        inventory = transform.Find("Inventory").gameObject;
-        //inventory.SetActive(false);
-        menu = transform.Find("ProtagMenu").gameObject;
+        notebook = transform.Find("ProtagCanvas/Notebook").gameObject;
+        notebook.SetActive(false);
+        inventory = transform.Find("ProtagCanvas/Inventory").gameObject;
+        inventory.SetActive(false);
+        menu = transform.Find("ProtagCanvas/ProtagMenu").gameObject;
+        menu.SetActive(false);
     }
 
     // Update is called once per frame

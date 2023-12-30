@@ -12,16 +12,18 @@ public class Show : MonoBehaviour
     private List<GameObject> showInventory;
     private List<string> added;
     private GameObject dialogueBox;
+    private GameObject closeButton;
     // Start is called before the first frame update
     void Start()
     {
         character = gameObject.GetComponentInParent<Character>();
         showView = transform.Find("ShowView").gameObject;
-        showContent = transform.Find("ShowContent").gameObject;
+        showContent = showView.transform.Find("Viewport/ShowContent").gameObject;
         inventory = GameObject.Find("Protag").GetComponent<ProtagInfo>().getInventory();
         showInventory = new List<GameObject>();
         added = new List<string>();
-        dialogueBox = character.transform.Find("DialogueBox").gameObject;
+        dialogueBox = character.transform.Find("Canvas/CharacterMenu/DialogueBox").gameObject;
+        closeButton = transform.Find("CloseShow").gameObject;
     }
 
     // Update is called once per frame
@@ -35,6 +37,7 @@ public class Show : MonoBehaviour
         //copy inventory to show inventory
         loadItems();
         showView.SetActive(true);
+        closeButton.SetActive(true);
         //show view active
     }
 
@@ -57,8 +60,14 @@ public class Show : MonoBehaviour
                 copy.AddComponent<ShowItem>();
                 copy.GetComponent<ShowItem>().show = this;
                 copy.transform.SetParent(showContent.transform);
-                added.Add(item.GetComponent<ItemInfo>().getName()));
+                added.Add(item.GetComponent<ItemInfo>().getName());
             }
         }
+    }
+
+    void closeShow()
+    {
+        showView.SetActive(false);
+        closeButton.SetActive(false);
     }
 }

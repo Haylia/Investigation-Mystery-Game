@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour // shows picked up items
         //protagInfo = GameObject.Find("Protag").GetComponent<ProtagInfo>();
         protagInfo = gameObject.GetComponentInParent<ProtagInfo>();
         inventoryView = transform.Find("InventoryView").gameObject;
-        inventoryContent = transform.Find("InventoryContent").gameObject;
+        inventoryContent = inventoryView.transform.Find("Viewport/InventoryContent").gameObject;
     }
 
     // Update is called once per frame

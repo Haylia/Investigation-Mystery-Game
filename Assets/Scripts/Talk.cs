@@ -20,8 +20,8 @@ public class Talk : MonoBehaviour
     {
         character = gameObject.GetComponentInParent<Character>();
         //optionPrefab = GameObject.Find("Option");
-        dialogeBox = character.transform.Find("DialogueBox").gameObject;
-        dialogueOptions = character.transform.Find("DialogueOptions").gameObject;
+        dialogeBox = character.transform.Find("Canvas/CharacterMenu/DialogueBox").gameObject;
+        dialogueOptions = transform.Find("DialogueOptions").gameObject;
     }
 
     // Update is called once per frame

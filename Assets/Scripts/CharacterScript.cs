@@ -22,12 +22,12 @@ public class CharacterScript : MonoBehaviour
         else
         {
             characterMenu.SetActive(true);
-            transform.Find("DialogueOptions").gameObject.SetActive(false);
-            transform.Find("Next").gameObject.SetActive(false);
-            transform.Find("Record").gameObject.SetActive(false);
-            transform.Find("Close").gameObject.SetActive(false);
-            transform.Find("EvidenceSelect").gameObject.SetActive(false);
-            transform.Find("EndAccusation").gameObject.SetActive(false);
+            transform.Find("Canvas/CharacterMenu/Talk/DialogueOptions").gameObject.SetActive(false);
+            transform.Find("Canvas/CharacterMenu/DialogueBox/Next").gameObject.SetActive(false);
+            transform.Find("Canvas/CharacterMenu/DialogueBox/Record").gameObject.SetActive(false);
+            transform.Find("Canvas/CharacterMenu/DialogueBox/CloseDialogue").gameObject.SetActive(false);
+            transform.Find("Canvas/CharacterMenu/Accuse/EvidenceSelect").gameObject.SetActive(false);
+            transform.Find("Canvas/CharacterMenu/Accuse/EndAccusation").gameObject.SetActive(false);
         }
 
 
@@ -46,5 +46,10 @@ public class CharacterScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void closeMenu()
+    {
+        characterMenu.SetActive(false);
     }
 }

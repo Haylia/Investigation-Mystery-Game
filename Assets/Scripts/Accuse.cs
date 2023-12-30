@@ -17,7 +17,7 @@ public class Accuse : MonoBehaviour
     void Start()
     {
         character = gameObject.GetComponentInParent<Character>();
-        dialogeBox = character.transform.Find("DialogueBox").gameObject;
+        dialogeBox = character.transform.Find("Canvas/CharacterMenu/DialogueBox").gameObject;
         evidenceSelect = transform.Find("EvidenceSelect").gameObject;
         waiting = false;
         protagMenu = GameObject.Find("ProtagMenu");
