@@ -155,6 +155,72 @@ Transform:
   - {fileID: 919719425}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &142708380 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+  m_PrefabInstance: {fileID: 530989732}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &325571117
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1195333009}
+    m_Modifications:
+    - target: {fileID: 2817698099797005761, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: shadeLabel
+      value: Kitchen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402537512205443026, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_Name
+      value: Kitchen Room Shade
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
 --- !u!4 &350037286 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
@@ -220,6 +286,72 @@ PrefabInstance:
     - target: {fileID: 8402537512205443026, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
       propertyPath: m_Name
       value: Parlour Room Shade
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+--- !u!4 &514762347 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+  m_PrefabInstance: {fileID: 325571117}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &514928228
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1195333009}
+    m_Modifications:
+    - target: {fileID: 2817698099797005761, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: shadeLabel
+      value: Chef's Quarters
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402537512205443026, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_Name
+      value: Chefs Room Shade
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -332,6 +464,138 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f051564d93b74f4395601f42a365729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &530989732
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1195333009}
+    m_Modifications:
+    - target: {fileID: 2817698099797005761, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: shadeLabel
+      value: Host's Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402537512205443026, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_Name
+      value: Host Room Shade
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+--- !u!4 &532478228 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+  m_PrefabInstance: {fileID: 1267039738}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &565741755
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1195333009}
+    m_Modifications:
+    - target: {fileID: 2817698099797005761, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: shadeLabel
+      value: Guest Bedroom 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402537512205443026, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_Name
+      value: Guest 2 Room Shade
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+--- !u!4 &624061189 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+  m_PrefabInstance: {fileID: 565741755}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &652717899
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,6 +964,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4138403707579355998, guid: 366054fa38eaced4086365e65d968b3c, type: 3}
   m_PrefabInstance: {fileID: 8559692499602370908}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &824943397 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+  m_PrefabInstance: {fileID: 1394943204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &845657033 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+  m_PrefabInstance: {fileID: 1633230189}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &867166679
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1195333009}
+    m_Modifications:
+    - target: {fileID: 2817698099797005761, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: shadeLabel
+      value: Maid's Quarters
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402537512205443026, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_Name
+      value: Maids Room Shade
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
 --- !u!1 &919719424
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,7 +1083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578d564ecd1a84a4d941a92ef7528a39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0
+  movementSpeed: 40
 --- !u!50 &919719427
 Rigidbody2D:
   serializedVersion: 4
@@ -1154,6 +1489,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+--- !u!4 &1054719685 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+  m_PrefabInstance: {fileID: 2050948283}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1093209522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,6 +1894,16 @@ Transform:
   - {fileID: 350037286}
   - {fileID: 1628542111}
   - {fileID: 366153652}
+  - {fileID: 1919943705}
+  - {fileID: 514762347}
+  - {fileID: 1305873035}
+  - {fileID: 1235722356}
+  - {fileID: 824943397}
+  - {fileID: 1054719685}
+  - {fileID: 142708380}
+  - {fileID: 532478228}
+  - {fileID: 845657033}
+  - {fileID: 624061189}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1195333010
@@ -1568,6 +1918,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd23935beaaa8d4f9320b757ce5aff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1235722356 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+  m_PrefabInstance: {fileID: 867166679}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1267039738
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1195333009}
+    m_Modifications:
+    - target: {fileID: 2817698099797005761, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: shadeLabel
+      value: Guest Bedroom 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402537512205443026, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_Name
+      value: Guest 1 Room Shade
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
 --- !u!1 &1274217744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,6 +2142,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1305873035 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+  m_PrefabInstance: {fileID: 514928228}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1317154913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1884,6 +2305,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1394943204
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1195333009}
+    m_Modifications:
+    - target: {fileID: 2817698099797005761, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: shadeLabel
+      value: Butler's Quarters
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402537512205443026, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_Name
+      value: Butlers Room Shade
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
 --- !u!1 &1475583149
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,6 +2529,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
   m_PrefabInstance: {fileID: 1038711499}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1633230189
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1195333009}
+    m_Modifications:
+    - target: {fileID: 2817698099797005761, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: shadeLabel
+      value: Study
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402537512205443026, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_Name
+      value: Study Room Shade
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
 --- !u!1001 &1662656057
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2266,6 +2809,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1763694241
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1195333009}
+    m_Modifications:
+    - target: {fileID: 2817698099797005761, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: shadeLabel
+      value: Pantry
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402537512205443026, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_Name
+      value: Pantry Room Shade
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
 --- !u!1 &1811764685
 GameObject:
   m_ObjectHideFlags: 0
@@ -2582,6 +3186,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1919943705 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+  m_PrefabInstance: {fileID: 1763694241}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1944906585
 GameObject:
   m_ObjectHideFlags: 0
@@ -3056,6 +3665,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &2050948283
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1195333009}
+    m_Modifications:
+    - target: {fileID: 2817698099797005761, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: shadeLabel
+      value: Child's Bedroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031950959172813866, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402537512205443026, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
+      propertyPath: m_Name
+      value: Child Room Shade
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 45f30f0a86550e840aabd090b015d419, type: 3}
 --- !u!1 &2071397714
 GameObject:
   m_ObjectHideFlags: 0

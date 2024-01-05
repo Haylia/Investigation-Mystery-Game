@@ -17,6 +17,8 @@ public class CameraScript : MonoBehaviour
         // find player x value
         if (player)
         {
+            //TODO:
+            //lock player Y to one of the three floors
             float playerx = player.transform.position.x;
             float playery = player.transform.position.y;
             Vector3 targetPosition = new Vector3(playerx, playery + 5, -10);

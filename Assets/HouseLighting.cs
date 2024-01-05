@@ -66,7 +66,7 @@ public class HouseLighting : MonoBehaviour
                 //foyer
                 foyerShaderObj.SetActive(false);
                 tmp.text = "Room: Foyer";
-                Debug.Log("In Foyer");
+                //Debug.Log("In Foyer");
             }
             else
             {
@@ -77,7 +77,7 @@ public class HouseLighting : MonoBehaviour
                 //parlour
                 parlourShaderObj.SetActive(false);
                 tmp.text = "Room: Parlour";
-                Debug.Log("In Parlour");
+                //Debug.Log("In Parlour");
             }
             else
             {
@@ -88,7 +88,7 @@ public class HouseLighting : MonoBehaviour
                 //dining room
                 diningShaderObj.SetActive(false);
                 tmp.text = "Room: Dining Room";
-                Debug.Log("In Dining Room");
+                //Debug.Log("In Dining Room");
             }
             else
             {
@@ -99,7 +99,7 @@ public class HouseLighting : MonoBehaviour
                 //library
                 libraryShaderObj.SetActive(false);
                 tmp.text = "Room: Library";
-                Debug.Log("In Foyer");
+                //Debug.Log("In Foyer");
             }
             else
             {
@@ -110,7 +110,7 @@ public class HouseLighting : MonoBehaviour
                 //lounge
                 loungeShaderObj.SetActive(false);
                 tmp.text = "Room: Lounge";
-                Debug.Log("In Lounge");
+                //Debug.Log("In Lounge");
             }
             else
             {
@@ -121,7 +121,7 @@ public class HouseLighting : MonoBehaviour
                 //pantry
                 pantryShaderObj.SetActive(false);
                 tmp.text = "Room: Pantry";
-                Debug.Log("In Pantry");
+                //Debug.Log("In Pantry");
             }
             else
             {
@@ -132,7 +132,7 @@ public class HouseLighting : MonoBehaviour
                 //kitchen
                 kitchenShaderObj.SetActive(false);
                 tmp.text = "Room: Kitchen";
-                Debug.Log("In Kitchen");
+                //Debug.Log("In Kitchen");
             }
             else
             {
@@ -143,7 +143,7 @@ public class HouseLighting : MonoBehaviour
                 //chef
                 chefShaderObj.SetActive(false);
                 tmp.text = "Room: Chef's Quarters";
-                Debug.Log("In Chefs");
+                //Debug.Log("In Chefs");
             }
             else
             {
@@ -154,7 +154,7 @@ public class HouseLighting : MonoBehaviour
                 //maid
                 maidShaderObj.SetActive(false);
                 tmp.text = "Room: Maid's Quarters";
-                Debug.Log("In Maids");
+                //Debug.Log("In Maids");
             }
             else
             {
@@ -165,7 +165,7 @@ public class HouseLighting : MonoBehaviour
                 //butler
                 butlerShaderObj.SetActive(false);
                 tmp.text = "Room: Butler's Quarters";
-                Debug.Log("In Butlers");
+                //Debug.Log("In Butlers");
             }
             else
             {
@@ -176,7 +176,7 @@ public class HouseLighting : MonoBehaviour
                 //child room
                 childShaderObj.SetActive(false);
                 tmp.text = "Room: Child's Room";
-                Debug.Log("In Childs");
+                //Debug.Log("In Childs");
             }
             else
             {
@@ -187,7 +187,7 @@ public class HouseLighting : MonoBehaviour
                 //host room
                 hostShaderObj.SetActive(false);
                 tmp.text = "Room: Host's Bedroom";
-                Debug.Log("In Hosts");
+                //Debug.Log("In Hosts");
             }
             else
             {
@@ -198,7 +198,7 @@ public class HouseLighting : MonoBehaviour
                 //guest room 1
                 guest1ShaderObj.SetActive(false);
                 tmp.text = "Room: Guest Bedroom 1";
-                Debug.Log("In Guest room 1");
+                //Debug.Log("In Guest room 1");
             }
             else
             {
@@ -209,7 +209,7 @@ public class HouseLighting : MonoBehaviour
                 //study
                 studyShaderObj.SetActive(false);
                 tmp.text = "Room: Study";
-                Debug.Log("In Study");
+                //Debug.Log("In Study");
             }
             else
             {
@@ -220,7 +220,7 @@ public class HouseLighting : MonoBehaviour
                 //guest room 2
                 guest2ShaderObj.SetActive(false);
                 tmp.text = "Room: Guest Bedroom 2";
-                Debug.Log("In Guest room 2");
+                //Debug.Log("In Guest room 2");
             }
             else
             {
