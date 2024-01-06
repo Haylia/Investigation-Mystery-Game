@@ -15,6 +15,7 @@ public class PlayerScript : MonoBehaviour
     GameObject stairsup2;
     GameObject stairsdown1;
     GameObject stairsdown2;
+    bool spacedown;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,20 +41,41 @@ public class PlayerScript : MonoBehaviour
         rb.velocity = new Vector3(movementX*movementSpeed, movementY*movementSpeed);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("collided with " + collision.name);
+        int layer = collision.gameObject.layer;
+        string layerName = LayerMask.LayerToName(layer);
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Debug.Log("space clicked");
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Stairs"))
+            {
+                UseStairs(collision.gameObject);
+            }
+        }
+
+    }
+
+    void OnTriggerStay2D(Collider2D collision)
     {
         int layer = collision.gameObject.layer;
         string layerName = LayerMask.LayerToName(layer);
 
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Stairs"))
+        if (Input.GetKey(KeyCode.Space))
         {
-            UseStairs(collision.gameObject);
+            Debug.Log("space clicked");
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Stairs"))
+            {
+                UseStairs(collision.gameObject);
+            }
         }
 
     }
 
     void UseStairs(GameObject gameObject)
     {
+
         if (gameObject == stairsup1 || gameObject == stairsup2)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y + 10, transform.position.z);
