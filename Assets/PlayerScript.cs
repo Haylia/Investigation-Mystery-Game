@@ -39,18 +39,6 @@ public class PlayerScript : MonoBehaviour
     {
         // move left and right
         movementY = 0;
-        if (transform.position.y > -46.63 && transform.position.y < -29.068)
-        {
-            movementY = -1;
-        }
-        if (transform.position.y > -26.63 && transform.position.y < -9.068)
-        {
-            movementY = -1;
-        }
-        if (transform.position.y > -6.63 && transform.position.y < 10.94)
-        {
-            movementY = -1;
-        }
         rb.velocity = new Vector3(movementX*movementSpeed, movementY*movementSpeed);
     }
 
