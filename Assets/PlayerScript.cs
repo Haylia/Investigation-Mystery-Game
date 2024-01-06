@@ -11,12 +11,20 @@ public class PlayerScript : MonoBehaviour
     private float movementX;
     private float movementY;
     public float movementSpeed;
+    GameObject stairsup1;
+    GameObject stairsup2;
+    GameObject stairsdown1;
+    GameObject stairsdown2;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         bcollider = GetComponent<BoxCollider2D>();
         sr = GetComponent<SpriteRenderer>();
+        stairsup1 = GameObject.Find("Stairs Up 1");
+        stairsup2 = GameObject.Find("Stairs Up 2");
+        stairsdown1 = GameObject.Find("Stairs Down 1");
+        stairsdown2 = GameObject.Find("Stairs Down 2");
     }
 
     void OnMove(InputValue movementValue)
@@ -30,5 +38,29 @@ public class PlayerScript : MonoBehaviour
     {
         // move left and right
         rb.velocity = new Vector3(movementX*movementSpeed, movementY*movementSpeed);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        int layer = collision.gameObject.layer;
+        string layerName = LayerMask.LayerToName(layer);
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Stairs"))
+        {
+            UseStairs(collision.gameObject);
+        }
+
+    }
+
+    void UseStairs(GameObject gameObject)
+    {
+        if (gameObject == stairsup1 || gameObject == stairsup2)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y + 10, transform.position.z);
+        }
+        if (gameObject == stairsdown1 || gameObject == stairsdown2)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y - 10, transform.position.z);
+        }
     }
 }
