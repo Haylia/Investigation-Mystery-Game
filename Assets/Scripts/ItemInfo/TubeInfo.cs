@@ -19,12 +19,15 @@ public class TubeInfo : ItemInfo
 
     void Start()
     {
+
         allInspect.Add("default", "Concealed speaking tube found between the Maid's and Chef's quarters and in the Master Bedroom. This can be used to communitcate throughout the house.");
         //allInspect.Add("inspected", "You have already inspected this item. Concealed speaking tube found between the maid's and chef's quarters. This could have been used to communicate without anyone else knowing.");
+
 
         //SHOWN FLAGS: "shown" + itemName
         //RECORDED TESTIMONY FLAG: "heard" + testimony id
         //RECORDED ITEM FLAG; "has" + itemName
+
 
         allFlags.Add("inspected", inspected);
         allFlags.Add("canPickUp", canPickUp);

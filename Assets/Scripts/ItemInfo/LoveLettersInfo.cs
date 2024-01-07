@@ -22,6 +22,7 @@ public class LoveLettersInfo : ItemInfo
         allInspect.Add("default", "A set of three love letters found in the bin of the study. They are Addressed to My Sweetheart Silvia and signed from Your Admirer Agnes, with more kisses than you care to count.");
         //allInspect.Add("inspected", "You have already inspected this item. A set of three love letters found in the bin of the study. They are Addressed to My Sweetheart Silvia and signed from Your Admirer Agnes, with more kisses than you care to count.");
 
+
         //SHOWN FLAGS: "shown" + itemName
         //RECORDED TESTIMONY FLAG: "heard" + testimony id
         //RECORDED ITEM FLAG; "has" + itemName
