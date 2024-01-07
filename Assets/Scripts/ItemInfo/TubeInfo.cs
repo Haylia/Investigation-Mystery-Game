@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnifeInfo : ItemInfo
+public class TubeInfo : ItemInfo
 {
-    string itemName = "BloodyKnife";
+    string itemName = "SpeakingTube";
 
-    public new bool canPickUp = true;
+    public new bool canPickUp = false;
     public bool pickedUp = false;
 
     bool inspected = false;
@@ -19,14 +19,11 @@ public class KnifeInfo : ItemInfo
 
     void Start()
     {
-        allInspect.Add("default", "A knife found in the master bedroom. This looks incriminating, and is most likely the murder weapon.");
-        allInspect.Add("inspected", "You have already inspected this item. A knife found in the master bedroom. This looks incriminating, and is most likely the murder weapon.");
+        allInspect.Add("default", "Concealed speaking tube found between the maid's and chef's quarters. This could have been used to communicate without anyone else knowing.");
+        allInspect.Add("inspected", "You have already inspected this item. Concealed speaking tube found between the maid's and chef's quarters. This could have been used to communicate without anyone else knowing.");
 
         //SHOWN FLAGS: "shown" + itemName
         //RECORDED TESTIMONY FLAG: "heard" + testimony id
-
-        //heard chef: Matches other knives found in the kitchen.
-
         //RECORDED ITEM FLAG; "has" + itemName
 
         allFlags.Add("inspected", inspected);
@@ -66,3 +63,4 @@ public class KnifeInfo : ItemInfo
         }
     }
 }
+

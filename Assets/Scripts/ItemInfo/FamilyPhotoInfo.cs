@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnifeInfo : ItemInfo
+public class FamilyPhotoInfo : ItemInfo
 {
-    string itemName = "BloodyKnife";
+    string itemName = "MaidFamilyPhoto";
 
     public new bool canPickUp = true;
     public bool pickedUp = false;
@@ -19,14 +19,10 @@ public class KnifeInfo : ItemInfo
 
     void Start()
     {
-        allInspect.Add("default", "A knife found in the master bedroom. This looks incriminating, and is most likely the murder weapon.");
-        allInspect.Add("inspected", "You have already inspected this item. A knife found in the master bedroom. This looks incriminating, and is most likely the murder weapon.");
+        allInspect.Add("default", "A low detail rendering picturing the young maid with a similar age man and two elderly people. There is a tear in the bottom left corner. This was concealed behind a dresser in the maids room, and appears to have been moved from its hiding spot frequently.");
+        allInspect.Add("inspected", "You have already inspected this item. A low detail rendering picturing the young maid with a similar age man and two elderly people. There is a tear in the bottom left corner. This was concealed behind a dresser in the maids room, and appears to have been moved from its hiding spot frequently.");
 
-        //SHOWN FLAGS: "shown" + itemName
         //RECORDED TESTIMONY FLAG: "heard" + testimony id
-
-        //heard chef: Matches other knives found in the kitchen.
-
         //RECORDED ITEM FLAG; "has" + itemName
 
         allFlags.Add("inspected", inspected);

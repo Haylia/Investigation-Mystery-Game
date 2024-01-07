@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnifeInfo : ItemInfo
+public class NewspaperInfo : ItemInfo
 {
-    string itemName = "BloodyKnife";
+    string itemName = "TornNewspaper";
 
     public new bool canPickUp = true;
     public bool pickedUp = false;
@@ -19,13 +19,13 @@ public class KnifeInfo : ItemInfo
 
     void Start()
     {
-        allInspect.Add("default", "A knife found in the master bedroom. This looks incriminating, and is most likely the murder weapon.");
-        allInspect.Add("inspected", "You have already inspected this item. A knife found in the master bedroom. This looks incriminating, and is most likely the murder weapon.");
+        allInspect.Add("default", "Multiple torn out scraps from several newspapers. All of them have one theme: Embezzlement. One scrap has details blotted out in black ink.");
+        allInspect.Add("inspected", "You have already inspected this item. Multiple torn out scraps from several newspapers. All of them have one theme: Embezzlement. One scrap has details blotted out in black ink.");
 
         //SHOWN FLAGS: "shown" + itemName
         //RECORDED TESTIMONY FLAG: "heard" + testimony id
 
-        //heard chef: Matches other knives found in the kitchen.
+        //if maid photo found: "You recognise an elderly and young man in a picture. They are the Maids father and brother."
 
         //RECORDED ITEM FLAG; "has" + itemName
 
@@ -66,3 +66,4 @@ public class KnifeInfo : ItemInfo
         }
     }
 }
+

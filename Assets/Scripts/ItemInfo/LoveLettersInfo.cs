@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnifeInfo : ItemInfo
+public class LoveLettersInfo : ItemInfo
 {
-    string itemName = "BloodyKnife";
+    string itemName = "LoveLetters";
 
     public new bool canPickUp = true;
     public bool pickedUp = false;
@@ -19,14 +19,11 @@ public class KnifeInfo : ItemInfo
 
     void Start()
     {
-        allInspect.Add("default", "A knife found in the master bedroom. This looks incriminating, and is most likely the murder weapon.");
-        allInspect.Add("inspected", "You have already inspected this item. A knife found in the master bedroom. This looks incriminating, and is most likely the murder weapon.");
+        allInspect.Add("default", "A set of three love letters found in the bin of the study. They are Addressed to My Sweetheart Silvia and signed from Your Admirer Agnes, with more kisses than you care to count.");
+        allInspect.Add("inspected", "You have already inspected this item. A set of three love letters found in the bin of the study. They are Addressed to My Sweetheart Silvia and signed from Your Admirer Agnes, with more kisses than you care to count.");
 
         //SHOWN FLAGS: "shown" + itemName
         //RECORDED TESTIMONY FLAG: "heard" + testimony id
-
-        //heard chef: Matches other knives found in the kitchen.
-
         //RECORDED ITEM FLAG; "has" + itemName
 
         allFlags.Add("inspected", inspected);
@@ -66,3 +63,4 @@ public class KnifeInfo : ItemInfo
         }
     }
 }
+

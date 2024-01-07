@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnifeInfo : ItemInfo
+public class NoticeInfo : ItemInfo
 {
-    string itemName = "BloodyKnife";
+    string itemName = "NoticeOfDismissal";
 
     public new bool canPickUp = true;
     public bool pickedUp = false;
@@ -19,14 +19,11 @@ public class KnifeInfo : ItemInfo
 
     void Start()
     {
-        allInspect.Add("default", "A knife found in the master bedroom. This looks incriminating, and is most likely the murder weapon.");
-        allInspect.Add("inspected", "You have already inspected this item. A knife found in the master bedroom. This looks incriminating, and is most likely the murder weapon.");
+        allInspect.Add("default", "A small note scribbled on some scrap paper detailing break times for the staff. Of note, Todays evening break was changed from 9pm to 10:30pm");
+        allInspect.Add("inspected", "You have already inspected this item. A small note scribbled on some scrap paper detailing break times for the staff. Of note, Todays evening break was changed from 9pm to 10:30pm");
 
         //SHOWN FLAGS: "shown" + itemName
         //RECORDED TESTIMONY FLAG: "heard" + testimony id
-
-        //heard chef: Matches other knives found in the kitchen.
-
         //RECORDED ITEM FLAG; "has" + itemName
 
         allFlags.Add("inspected", inspected);
