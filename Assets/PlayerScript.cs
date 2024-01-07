@@ -15,7 +15,6 @@ public class PlayerScript : MonoBehaviour
     GameObject stairsup2;
     GameObject stairsdown1;
     GameObject stairsdown2;
-    bool spacedown;
     // Start is called before the first frame update
     void Start()
     {
