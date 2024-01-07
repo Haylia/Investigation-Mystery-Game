@@ -32,7 +32,7 @@ public class HouseLighting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player Character").transform;
+        player = GameObject.Find("Protag").transform;
         roomtextobj = GameObject.Find("RoomText");
         tmp = roomtextobj.GetComponent<TMPro.TextMeshProUGUI>();
         foyerShaderObj = GameObject.Find("Foyer Room Shade");
