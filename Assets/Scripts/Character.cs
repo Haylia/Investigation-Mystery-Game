@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Character : MonoBehaviour
 {
@@ -153,6 +154,8 @@ public class Character : MonoBehaviour
         currentResponse = "";
         characterInfo.setAccused(true);
         characterInfo.setFlag("accused", true);
+
+        transform.Find("Canvas/CharacterMenu/Accuse").gameObject.GetComponent<Button>().enabled = true;
         //currentEvidence = "";
     }
 

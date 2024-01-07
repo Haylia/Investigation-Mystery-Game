@@ -32,9 +32,9 @@ public class Protag : MonoBehaviour
         inventory = transform.Find("ProtagCanvas/Inventory").gameObject;
         inventory.SetActive(false);
         menu = transform.Find("ProtagCanvas/ProtagMenu").gameObject;
-        menu.SetActive(false);
-        explain = transform.Find("ProtagCanvas/Explain").gameObject;
-        explain.SetActive(false);
+        //menu.SetActive(false);
+        explain = transform.Find("ProtagCanvas/ExplainCanvas").gameObject;
+        //explain.SetActive(false);
 
         rb = GetComponent<Rigidbody2D>();
         bcollider = GetComponent<BoxCollider2D>();
