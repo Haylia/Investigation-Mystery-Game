@@ -100,6 +100,13 @@ public class MaidInfo : CharacterInfo
         secretOp.Add(TestimonyMasterList.MaidSecrets);
         flagToDialogueOptions.Add("heardSpouseHostSecrets", secretOp);
 
+        pressureResponse.Add(0, "You have no evidence pointing to me");
+        pressureResponse.Add(1, "It's just a misunderstanding, you can see that. That by itself doesn't really prove anything anyway");
+        pressureResponse.Add(2, "You have it all wrong, I can explain!");
+        pressureResponse.Add(3, "Ahem... it looks bad for me... but I maintain my innocence!");
+        pressureResponse.Add(4, "I won't stand for this! This is ridiculous!");
+        pressureResponse.Add(5, "I feel so exposed... but I didn't do it!");
+        pressureResponse.Add(6, "Oh god... surely some of this stuff is planted...");
 
         //SHOWN FLAGS: "shown" + itemName
         //RECORDED TESTIMONY FLAG: "heard" + testimony id
