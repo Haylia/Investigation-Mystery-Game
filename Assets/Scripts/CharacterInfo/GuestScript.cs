@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GuestScript : CharacterInfo
 {
-    string characterName = "PartyGuest";
+    string characterName = "Agnes";
 
     bool accused = false;
     bool successful = false;

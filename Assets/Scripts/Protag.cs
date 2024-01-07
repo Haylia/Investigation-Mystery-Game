@@ -132,5 +132,3 @@ void UseStairs(GameObject gameObject)
     }
 }
 }
-
-

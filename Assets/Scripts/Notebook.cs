@@ -44,6 +44,12 @@ public class Notebook : MonoBehaviour //shows recorded testimony
         previousPage = transform.Find("PreviousPage").gameObject;
         // set up testmony id to display id
         // set up character names
+        characterNames.Add("Margaret");
+        characterNames.Add("Silvia");
+        characterNames.Add("Agnes");
+        characterNames.Add("Bernard");
+        characterNames.Add("Chef");
+        characterNames.Add("Bartholomew");
     }
 
     // Update is called once per frame
@@ -54,9 +60,10 @@ public class Notebook : MonoBehaviour //shows recorded testimony
 
     public void onOpen()
     {
+        Debug.Log("Notebook opened");
         testimony = protagInfo.getTestimony();
         characterToTestimonyID = protagInfo.getCharacterToTestimony();
-        currentPage = 1; // technically first 2 entries
+        currentPage = 0; // technically first 2 entries
 
         testimonyContainers();
         createPages();
@@ -67,8 +74,15 @@ public class Notebook : MonoBehaviour //shows recorded testimony
     void displayPages()
     {
         //GameObject pagesDisplay = GameObject.Find("PageDisplay");
+        Debug.Log("pages: " + nameToPage.Count);
+        if (currentPage <= nameToPage.Count) // show 1 page
+        {
+            var p1 = nameToPage[characterNames[currentPage]];
+            p1.SetActive(true);
+            p1.transform.SetParent(pageDisplay.transform);
+        }
 
-        if (currentPage <= nameToPage.Count + 1) //show 2 pages
+        else if (currentPage <= nameToPage.Count + 1) //show 2 pages
         {
             var p1 = nameToPage[characterNames[currentPage]];
             p1.SetActive(true);
@@ -76,12 +90,6 @@ public class Notebook : MonoBehaviour //shows recorded testimony
             var p2 = nameToPage[characterNames[currentPage + 1]];
             p2.SetActive(true);
             p2.transform.SetParent(pageDisplay.transform);
-        }
-        else if (currentPage <= nameToPage.Count) // show 1 page
-        {
-            var p1 = nameToPage[characterNames[currentPage]];
-            p1.SetActive(true);
-            p1.transform.SetParent(pageDisplay.transform);
         }
     }
 
@@ -109,7 +117,9 @@ public class Notebook : MonoBehaviour //shows recorded testimony
 
             if (!nameToPage.ContainsKey(character.GetComponent<CharacterInfo>().getName()))
             {
-                TextMeshPro name = new TextMeshPro();
+                GameObject name = new GameObject();
+                //TextMeshPro name = new TextMeshPro();
+                name.AddComponent<TextMeshProUGUI>();
                 name.GetComponent<TextMeshProUGUI>().SetText(character.GetComponent<CharacterInfo>().getName());
 
 
@@ -119,6 +129,8 @@ public class Notebook : MonoBehaviour //shows recorded testimony
                 page.AddComponent<Image>();
                 page.AddComponent<VerticalLayoutGroup>();
                 page.AddComponent<Scrollbar>();
+                //page.GetComponent<Image>().color = Color.black;
+      
 
                 name.transform.SetParent(page.transform);
                 nameToPage.Add(character.GetComponent<CharacterInfo>().getName(),page);
@@ -182,9 +194,14 @@ public class Notebook : MonoBehaviour //shows recorded testimony
         {
             if (!idToContainer.ContainsKey(id))
             {
-                TextMeshPro displayId = new TextMeshPro();
-                displayId.GetComponent<TextMeshProUGUI>().SetText(testimonyIDToDisplayID[id]);
-                TextMeshPro testimonyContent = new TextMeshPro();
+                //TextMeshPro displayId = new TextMeshPro();
+                GameObject displayId = new GameObject();
+                displayId.AddComponent<TextMeshProUGUI>();
+                //displayId.GetComponent<TextMeshProUGUI>().SetText(testimonyIDToDisplayID[id]);
+                displayId.GetComponent<TextMeshProUGUI>().SetText(id);
+                //TextMeshPro testimonyContent = new TextMeshPro();
+                GameObject testimonyContent = new GameObject();
+                testimonyContent.AddComponent<TextMeshProUGUI>();
                 testimonyContent.GetComponent<TextMeshProUGUI>().SetText(testimony[id]);
 
                 GameObject container = new GameObject();

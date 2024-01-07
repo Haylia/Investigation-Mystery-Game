@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ButlerInfo : CharacterInfo
 {
-    string characterName = "Butler";
+    string characterName = "Bartholomew";
 
     bool accused = false;
     bool successful = false;

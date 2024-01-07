@@ -8,19 +8,22 @@ public static class TestimonyMasterList
 
     //<MAID>
     //Maid dialogue options
-    public static string MaidDefIntro = "";
-    public static string MaidDefHost = "";
-    public static string MaidDefLocation = "";
-    public static string MaidDefThoughts = "";
+    public static string MaidDefIntro = "Who are you?";
+    public static string MaidDefHost = "What were you feelings towards {Host}?";
+    public static string MaidDefLocation = "Where were you at the time of the murder?";
+    public static string MaidDefThoughts = "Is there anything else you want to tell me?";
     public static string MaidSecrets = ""; //#SpouseHostSecrets
     //Maid dialogue responses (ids from Miro board)
-    public static string MaidIntro = "";
+    public static string MaidIntro = "I am {MAID NAME} the Maid, and I am responsible for the upkeep of this house. If you need anything done do ask me.";
     public static string MaidLying = "";
-    public static string MaidHost = "";
-    public static string MaidLocation = "";
-    public static string Firing = "";
+    public static string MaidHost = @"I’ve been working in this house for the last 7 years and I know {HOST NAME} on a personal level. 
+                                    I believe this family looks out for me back as I do for them";
+    public static string MaidLocation = "I was in my room in the Servants' Quarters";
+    public static string Firing = @"I found this hidden earlier when I was cleaning. I showed it to {HOST} as I thought I would be looking out for them.
+                                   They seemed so very upset by {SPOUSE}.
+                                   *** YOU AQUIRED [NOTICE OD DISMISSAL]";
     //Maid show responses
-    public static string MaidDenial = ""; //SHOW Newspaper
+    public static string MaidDenial = "These are just some random newspapers they have nothing to do with me."; //SHOW Newspaper
 
     //<BUTLER>
     public static string ButlerDefIntro = "";
