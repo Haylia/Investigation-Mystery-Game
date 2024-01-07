@@ -73,12 +73,13 @@ public static class TestimonyMasterList
 
     //<GUEST>
     public static string GuestDefIntro = "";
-    public static string GuestfDefHost = "";
+    public static string GuestDefHost = "";
     public static string GuestDefLocation = "";
     public static string GuestDefThoughts = "";
     public static string GuestHostKnow = ""; //shownLoveLetters
     public static string GuestMutual = ""; //shownLoveLetters
-    public static string GuestShares = ""; //#SpousePartner
+    public static string GuestSharesWhy = ""; //#SpousePartner
+    public static string GuestSharesPartner = ""; //#SpousePartner
 
     public static string GuestIntro = "";
     public static string GuestHostDefault = "";
@@ -94,7 +95,7 @@ public static class TestimonyMasterList
 
     //<SPOUSE>
     public static string SpouseDefIntro = "";
-    public static string SpousefDefHost = "";
+    public static string SpouseDefHost = "";
     public static string SpouseDefLocation = "";
     public static string SpouseDefThoughts = "";
     public static string SpouseDefHostWhy = "";
@@ -103,22 +104,25 @@ public static class TestimonyMasterList
     public static string SpouseLocationAlibi = ""; //#SpouseLocation
     public static string SpouseEmbezzlementReason = ""; //hasLedger&BankStatement
     public static string SpouseEmbezzlementHost = ""; //hasLedger&BankStatement
-    public static string SpouseFiredReason = ""; //#Fired
-    public static string SpouseFiredHost = ""; //#Fired
+    public static string SpouseFiredReason = ""; //#Firing
+    public static string SpouseFiredHost = ""; //#Firing
     public static string SpouseLoveMutual = ""; //hasLoveLetters
     public static string SpouseLoveHost = ""; //hasLoveLetters
 
     public static string SpouseIntro = "";
     public static string SpouseHostDefault = "";
-    public static string SpousseHostSecrets = ""; //#FiredHost
+    public static string SpouseHostSecrets = ""; //#FiredHost
     public static string SpouseLocation = "";
     public static string SpousePartner = "";
     public static string HostNecklace = "";
+    public static string HostReason = "";
+    public static string HostTiming = "";
     public static string StaffBreak = "";
-    public static string EmebzzlementReason = "";
+    public static string EmbezzlementReason = "";
     public static string EmbezzlementHost = "";
     public static string FiredDefault = "";
     public static string FiredReason = ""; //#EmbezzlementReason
+    public static string FiredHost = "";
     public static string SpouseLoveLettersMutual = "";
     public static string SpouseLoveLettersHost = "";
 }
