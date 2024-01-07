@@ -26,6 +26,8 @@ public class TubeInfo : ItemInfo
         //RECORDED TESTIMONY FLAG: "heard" + testimony id
         //RECORDED ITEM FLAG; "has" + itemName
 
+        //related flags: 
+
         allFlags.Add("inspected", inspected);
         allFlags.Add("canPickUp", canPickUp);
         allFlags.Add("pickedUp", pickedUp);
