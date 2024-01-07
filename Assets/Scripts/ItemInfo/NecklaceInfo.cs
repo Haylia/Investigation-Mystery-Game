@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class NecklaceInfo : ItemInfo
 {
-    string itemName = "Necklace";
+
+    string itemName = "HostNecklace";
+
 
     public new bool canPickUp = true;
     public bool pickedUp = false;
@@ -19,8 +21,10 @@ public class NecklaceInfo : ItemInfo
 
     void Start()
     {
-        allInspect.Add("default", "This necklace was dropped by the maid in a moment of panic.");
-        allInspect.Add("inspected", "You have already inspected this item. This necklace was dropped by the maid in a moment of panic");
+
+        allInspect.Add("default", "This necklace was dropped by the maid in a moment of panic. There's blood on it.");
+        //allInspect.Add("inspected", "You have already inspected this item. This necklace was dropped by the maid in a moment of panic");
+
 
         //SHOWN FLAGS: "shown" + itemName
         //RECORDED TESTIMONY FLAG: "heard" + testimony id

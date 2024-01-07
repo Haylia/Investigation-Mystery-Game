@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class KnifeInfo : ItemInfo
 {
-    string itemName = "BloodyKnife";
+
+    string itemName = "Knife";
+
 
     public new bool canPickUp = true;
     public bool pickedUp = false;
@@ -20,7 +22,9 @@ public class KnifeInfo : ItemInfo
     void Start()
     {
         allInspect.Add("default", "A knife found in the master bedroom. This looks incriminating, and is most likely the murder weapon.");
-        allInspect.Add("inspected", "You have already inspected this item. A knife found in the master bedroom. This looks incriminating, and is most likely the murder weapon.");
+
+        allInspect.Add("KnifeSource", "A knife found in the master bedroom. This looks incriminating, and is most likely the murder weapon. Chef identified it as one of the kitchen knives.");
+
 
         //SHOWN FLAGS: "shown" + itemName
         //RECORDED TESTIMONY FLAG: "heard" + testimony id

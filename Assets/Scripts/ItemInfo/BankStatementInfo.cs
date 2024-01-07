@@ -19,8 +19,14 @@ public class BankStatementInfo : ItemInfo
 
     void Start()
     {
-        allInspect.Add("default", "A set of papers detailing the last three months of transactions from bank accounts owned by both Heather and Silvia. Notably, Life insurance has been bought for Heather from the bank account of Silvia on the bottom sheet.");
-        allInspect.Add("inspected", "You have already inspected this item. A set of papers detailing the last three months of transactions from bank accounts owned by both Heather and Silvia. Notably, Life insurance has been bought for Heather from the bank account of Silvia on the bottom sheet.");
+
+        allInspect.Add("default", @"A set of papers detailing the last three months of transactions from bank accounts owned by both Heather and Silvia.
+                        Notably, Life insurance has been bought for Heather from the bank account of Silvia on the bottom sheet.");
+        allInspect.Add("hasLedger", @"A set of papers detailing the last three months of transactions from bank accounts owned by both Heather and Silvia.
+                        Notably, Life insurance has been bought for Heather from the bank account of Silvia on the bottom sheet.
+                        There is also a regular income that matches mysterious outgoing payments in Silvia's company Ledger.");
+        //allInspect.Add("inspected", "You have already inspected this item. A set of papers detailing the last three months of transactions from bank accounts owned by both Heather and Silvia. Notably, Life insurance has been bought for Heather from the bank account of Silvia on the bottom sheet.");
+
 
         //SHOWN FLAGS: "shown" + itemName
         //RECORDED TESTIMONY FLAG: "heard" + testimony id

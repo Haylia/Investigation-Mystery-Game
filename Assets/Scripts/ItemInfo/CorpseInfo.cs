@@ -20,7 +20,8 @@ public class CorpseInfo : ItemInfo
     void Start()
     {
         allInspect.Add("default", "Are you really trying to talk to a corpse?");
-        allInspect.Add("inspected", "You've already tried to talk to the corpse");
+        allInspect.Add("hasHostsCorpse", "You've already tried to talk to the corpse");
+
 
         //RECORDED TESTIMONY FLAG: "heard" + testimony id
         //RECORDED ITEM FLAG; "has" + itemName

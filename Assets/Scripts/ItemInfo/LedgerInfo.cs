@@ -19,7 +19,13 @@ public class LedgerInfo : ItemInfo
 
     void Start()
     {
-        //allInspect.Add("default", "default inspect response");
+
+        allInspect.Add("default", @"A ledger detailing finances for Silvia's company.
+                        There are regular outgoing payments that seem unusual.");
+        allInspect.Add("hasBankStatement", @"A ledger detailing finances for Silvia's company.
+                        There are regular outgoing payments that seem unusual.
+                        These payments match incoming payments on the Bank Statement.");
+
         //allInspect.Add("inspected", "already inspected");
 
         //SHOWN FLAGS: "shown" + itemName
