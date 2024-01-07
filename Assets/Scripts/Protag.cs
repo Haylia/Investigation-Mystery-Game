@@ -9,9 +9,9 @@ public class Protag : MonoBehaviour
     private GameObject inventory;
     private GameObject menu;
     private GameObject explain;
-<<<<<<< HEAD
+
     private GameObject canvas;
-=======
+
     Rigidbody2D rb;
     BoxCollider2D bcollider;
     SpriteRenderer sr;
@@ -22,7 +22,7 @@ public class Protag : MonoBehaviour
     GameObject stairsup2;
     GameObject stairsdown1;
     GameObject stairsdown2;
->>>>>>> 4cf1f2df39ca0fc8e1c65ec4b399589f21c941b5
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,9 +34,7 @@ public class Protag : MonoBehaviour
         menu.SetActive(false);
         explain = transform.Find("ProtagCanvas/Explain").gameObject;
         explain.SetActive(false);
-<<<<<<< HEAD
 
-=======
         rb = GetComponent<Rigidbody2D>();
         bcollider = GetComponent<BoxCollider2D>();
         sr = GetComponent<SpriteRenderer>();
@@ -44,7 +42,7 @@ public class Protag : MonoBehaviour
         stairsup2 = GameObject.Find("Stairs Up 2");
         stairsdown1 = GameObject.Find("Stairs Down 1");
         stairsdown2 = GameObject.Find("Stairs Down 2");
->>>>>>> 4cf1f2df39ca0fc8e1c65ec4b399589f21c941b5
+
     }
 
     void OnMove(InputValue movementValue)

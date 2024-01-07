@@ -65,6 +65,7 @@ public class Accuse : MonoBehaviour
 
             //wait for protag dialogue to end
             protagInfo.explaining = true;
+            explainStart();
             yield return new WaitWhile(() => protagInfo.explaining);
 
             //character response
@@ -103,7 +104,7 @@ public class Accuse : MonoBehaviour
         GameObject.Find("SceneMaster").GetComponent<SceneMaster>().checkEndingReached();
     }
 
-    private void explaintStart()
+    private void explainStart()
     {
         explain.SetActive(true);
         string dialogue = protagMenu.GetComponentInParent<ProtagInfo>().currentAccuseDialogue;
