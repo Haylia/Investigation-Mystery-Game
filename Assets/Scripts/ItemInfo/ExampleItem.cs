@@ -19,8 +19,12 @@ public class ExampleItem : ItemInfo
 
     void Start()
     {
-        allInspect.Add("default", "default inspect response");
-        allInspect.Add("inspected", "already inspected");
+        //allInspect.Add("default", "default inspect response");
+        //allInspect.Add("inspected", "already inspected");
+
+        //SHOWN FLAGS: "shown" + itemName
+        //RECORDED TESTIMONY FLAG: "heard" + testimony id
+        //RECORDED ITEM FLAG; "has" + itemName
 
         allFlags.Add("inspected", inspected);
         allFlags.Add("canPickUp", canPickUp);

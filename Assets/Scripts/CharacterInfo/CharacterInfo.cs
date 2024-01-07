@@ -18,6 +18,7 @@ public abstract class CharacterInfo : MonoBehaviour
     public abstract Dictionary<string, string> getAllShow();
 
     public abstract Dictionary<string, string> getTestimonyToID();
+    public abstract Dictionary<string, string> getIDToTestimony();
 
     public abstract Dictionary<string, bool> getAllFlags();
 

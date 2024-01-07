@@ -28,6 +28,8 @@ public class CharacterScript : MonoBehaviour
             transform.Find("Canvas/CharacterMenu/DialogueBox/CloseDialogue").gameObject.SetActive(false);
             transform.Find("Canvas/CharacterMenu/Accuse/EvidenceSelect").gameObject.SetActive(false);
             transform.Find("Canvas/CharacterMenu/Accuse/EndAccusation").gameObject.SetActive(false);
+            transform.Find("Canvas/CharacterMenu/Show/ShowView").gameObject.SetActive(false);
+            transform.Find("Canvas/CharacterMenu/Show/CloseShow").gameObject.SetActive(false);
         }
 
 

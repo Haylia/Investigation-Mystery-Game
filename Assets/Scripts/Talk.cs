@@ -62,6 +62,11 @@ public class Talk : MonoBehaviour
     {
         character.talking(option);
         dialogueOptions.SetActive(false);
+        ////////////////////////////////////////////reemeber to change name
+        if (character.gameObject.GetComponent<CharacterInfo>().getName() == "Maid" && option == TestimonyMasterList.MaidDefThoughts)
+        {
+            GameObject.Find("Protag").GetComponent<ProtagInfo>().pickUpItem(GameObject.Find("NoticeOfDismissal"));
+        }
     }
 
     void dialogue()

@@ -16,6 +16,7 @@ public class Character : MonoBehaviour
     Dictionary<string, List<string>> flagToDialogueOptions = new Dictionary<string, List<string>>();
     Dictionary<string, string> availableDialogue = new Dictionary<string, string>();
     Dictionary<string, string> testimonyToID = new Dictionary<string, string>();
+    Dictionary<string, string> idToTestimony = new Dictionary<string, string>();
 
     Dictionary<string, string> allShow = new Dictionary<string, string>();
 
@@ -25,6 +26,7 @@ public class Character : MonoBehaviour
     Dictionary<string, bool> allFlags = new Dictionary<string, bool>();
 
     public string currentResponse = "";
+    public bool responding;
 
     //string currentShowItem = "";
 
@@ -33,6 +35,7 @@ public class Character : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        responding = false;
         protagInfo = GameObject.Find("Protag").GetComponent<ProtagInfo>();
 
         characterInfo = gameObject.GetComponent<CharacterInfo>();
@@ -41,6 +44,7 @@ public class Character : MonoBehaviour
         allDialogue = characterInfo.getAllTalk();
         flagToDialogueOptions = characterInfo.getFlagToDialogueOptions();
         testimonyToID = characterInfo.getTestimonyToID();
+        idToTestimony = characterInfo.getIDToTestimony();
 
         allShow = characterInfo.getAllShow();
     }
@@ -190,7 +194,7 @@ public class Character : MonoBehaviour
                 res = allDialogue[op]["default"];
             }
 
-            availableDialogue.Add(op, res);
+            availableDialogue.Add(op, idToTestimony[res]);
         }
 
     }

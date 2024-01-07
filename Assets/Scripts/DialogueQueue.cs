@@ -12,6 +12,7 @@ public class DialogueQueue : MonoBehaviour
     private GameObject nextButton;
     private GameObject recordButton;
     private GameObject closeButton;
+    private Character c;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class DialogueQueue : MonoBehaviour
         nextButton = transform.Find("Next").gameObject;
         recordButton = transform.Find("Record").gameObject;
         closeButton = transform.Find("CloseDialogue").gameObject;
+        c = GetComponentInParent<Character>();
     }
 
     // Update is called once per frame
@@ -44,6 +46,7 @@ public class DialogueQueue : MonoBehaviour
 
     public void close()
     {
+        c.responding = false;
         gameObject.GetComponentInParent<Character>().talkEnd();
         recordButton.SetActive(false);
         closeButton.SetActive(false);

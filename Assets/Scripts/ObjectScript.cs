@@ -47,6 +47,7 @@ public class ObjectScript : MonoBehaviour
         transform.Find("Canvas/ItemInfo/Present").gameObject.SetActive(protageInfo.accusing);
     }
 
+
     // Start is called before the first frame update
     void Start()
     {
