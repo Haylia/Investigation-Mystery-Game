@@ -51,6 +51,7 @@ public class Character : MonoBehaviour
 
     public void characterClicked()
     {
+        allFlags.Clear();
         characterFlags = characterInfo.getAllFlags();
         protagFlags = protagInfo.getAllFlags();
         allFlags = characterFlags;

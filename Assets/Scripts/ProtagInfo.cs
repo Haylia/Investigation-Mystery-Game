@@ -260,7 +260,7 @@ public class ProtagInfo : MonoBehaviour
             evidence.Add(testimonyID);
             allFlags.Add("heard" + testimonyID, true);
 
-            if (characterToTestimony.ContainsKey(gameObject))
+            if (characterToTestimony.ContainsKey(character))
             {
                 var t = characterToTestimony[character];
                 t.Add(testimonyID);
