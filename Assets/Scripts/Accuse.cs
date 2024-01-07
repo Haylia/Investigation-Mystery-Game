@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Accuse : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Accuse : MonoBehaviour
     private int turns;
     private bool waiting;
     private GameObject protagMenu;
+    private GameObject protagCanvas;
     private GameObject explain;
     private ProtagInfo protagInfo;
     // Start is called before the first frame update
@@ -23,8 +25,9 @@ public class Accuse : MonoBehaviour
         evidenceSelect = transform.Find("EvidenceSelect").gameObject;
         waiting = false;
         protagMenu = GameObject.Find("ProtagMenu");
-        explain = GameObject.Find("Explain");
+        explain = GameObject.Find("ExplainCanvas");
         protagInfo = GameObject.Find("Protag").GetComponent<ProtagInfo>();
+        protagCanvas = GameObject.Find("ProtagCanvas");
     }
 
     // Update is called once per frame
@@ -45,6 +48,10 @@ public class Accuse : MonoBehaviour
         turns = 0;
 
         evidenceSelect.SetActive(false);
+        character.transform.Find("Canvas/CharacterMenu/Talk").gameObject.SetActive(false);
+        character.transform.Find("Canvas/CharacterMenu/Show").gameObject.SetActive(false);
+        character.transform.Find("Canvas/CharacterMenu/Accuse").gameObject.GetComponent<Button>().enabled = false;
+        character.transform.Find("Canvas/CharacterMenu/CloseCMenu").gameObject.SetActive(false);
 
         StartCoroutine(accuseLoop());
     }
@@ -62,6 +69,8 @@ public class Accuse : MonoBehaviour
             protagMenu.transform.Find("ClosePMenu").gameObject.SetActive(false);
             yield return new WaitWhile(() => waiting);
             protagMenu.SetActive(false);
+            protagCanvas.transform.Find("Notebook").gameObject.SetActive(false);
+            protagCanvas.transform.Find("Inventory").gameObject.SetActive(false);
 
             //wait for protag dialogue to end
             protagInfo.explaining = true;
@@ -72,6 +81,7 @@ public class Accuse : MonoBehaviour
             dialogeBox.GetComponent<TextMeshProUGUI>().SetText(character.currentResponse);
             character.responding = true;
             dialogeBox.SetActive(true);
+            dialogeBox.transform.Find("CloseDialogue").gameObject.SetActive(true);
 
             yield return new WaitWhile(() => character.responding);
 
@@ -114,7 +124,7 @@ public class Accuse : MonoBehaviour
         {
             organisedDialogue.Push(s);
         }
-        explain.GetComponent<TextMeshProUGUI>().SetText(organisedDialogue.Pop());
+        explain.transform.Find("Explain").GetComponent<TextMeshProUGUI>().SetText(organisedDialogue.Pop());
         explain.GetComponent<ExplainQueue>().explainQueue = organisedDialogue;
     }
 

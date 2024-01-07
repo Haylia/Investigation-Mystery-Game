@@ -31,7 +31,7 @@ public class ExplainQueue : MonoBehaviour
     {
         if (explainQueue.TryPeek(out string result))
         {
-            gameObject.GetComponent<TextMeshProUGUI>().SetText(explainQueue.Pop());
+            transform.Find("Explain").GetComponent<TextMeshProUGUI>().SetText(explainQueue.Pop());
         }
         else
         {
