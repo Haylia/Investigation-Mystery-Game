@@ -117,6 +117,7 @@ public class ProtagInfo : MonoBehaviour
                 characterToTestimony.Add(character, t);
             }
         }
+        Debug.Log(testimonyID + " added to Notebook");
     }
 
     public void accusationBegin()

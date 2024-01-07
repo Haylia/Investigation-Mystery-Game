@@ -32,15 +32,18 @@ public class DialogueQueue : MonoBehaviour
 
     public void next()
     {
+        gameObject.GetComponent<TextMeshProUGUI>().SetText(dialogueQueue.Pop());
         if (dialogueQueue.TryPeek(out string result))
         {
-            gameObject.GetComponent<TextMeshProUGUI>().SetText(dialogueQueue.Pop());
+            //gameObject.GetComponent<TextMeshProUGUI>().SetText(dialogueQueue.Pop());
+            nextButton.SetActive(true);
         }
         else
         {
             //GameObject.Find("Next").SetActive(false);
             // GameObject.Find("CloseDialogue").SetActive(true);
             closeButton.SetActive(true);
+            nextButton.SetActive(false);
         }
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PartnerInfo : CharacterInfo
 {
-    string characterName = "BusinessPartner";
+    string characterName = "Bernard";
 
     bool accused = false;
     bool successful = false;

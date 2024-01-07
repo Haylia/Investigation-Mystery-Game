@@ -22,6 +22,8 @@ public class Talk : MonoBehaviour
         //optionPrefab = GameObject.Find("Option");
         dialogeBox = character.transform.Find("Canvas/CharacterMenu/DialogueBox").gameObject;
         dialogueOptions = transform.Find("DialogueOptions").gameObject;
+        next = character.transform.Find("Canvas/CharacterMenu/DialogueBox/Next").gameObject;
+
     }
 
     // Update is called once per frame
@@ -32,17 +34,22 @@ public class Talk : MonoBehaviour
 
     public void talkStart()
     {
-        while (dialogeBox.transform.childCount > 0)
+        OptionButton[] opButtons = dialogeBox.GetComponentsInChildren<OptionButton>();
+
+        if (opButtons.Length == 0)
         {
-            Destroy(dialogueOptions.GetComponentInChildren<Button>().gameObject);
+            foreach (OptionButton b in opButtons)
+            {
+                Destroy(b.gameObject);
+            }
         }
         character.talk();
         generateOptions(character.getAvailableTalk().Keys.ToList());
 
-        dialogue();
+        //dialogue();
 
-        dialogeBox.transform.Find("Next").gameObject.SetActive(true);
-        dialogeBox.transform.Find("Record").gameObject.SetActive(true);
+        //dialogeBox.transform.Find("Next").gameObject.SetActive(true);
+        //dialogeBox.transform.Find("Record").gameObject.SetActive(true);
     }
 
     void generateOptions(List<string> options)
@@ -52,10 +59,16 @@ public class Talk : MonoBehaviour
             GameObject b = new GameObject();
             b.name = op;
             b.AddComponent<Button>();
-            b.GetComponentInChildren<TextMeshProUGUI>().SetText(op);
+            b.AddComponent<TextMeshProUGUI>();
+            b.GetComponent<TextMeshProUGUI>().SetText(op);
             b.GetComponent<Button>().onClick.AddListener(delegate { optionSelected(op); });
+            b.AddComponent<OptionButton>();
+            //b.transform.SetParent(dialogueOptions.transform.Find("/Viewport/Content"));
             b.transform.SetParent(dialogueOptions.transform);
+            b.SetActive(true);
+            Debug.Log(b.name);
         }
+        dialogueOptions.SetActive(true);
     }
 
     void optionSelected(string option)
@@ -67,6 +80,8 @@ public class Talk : MonoBehaviour
         {
             GameObject.Find("Protag").GetComponent<ProtagInfo>().pickUpItem(GameObject.Find("NoticeOfDismissal"));
         }
+        dialogue();
+        dialogeBox.transform.Find("Record").gameObject.SetActive(true);
     }
 
     void dialogue()
@@ -104,5 +119,10 @@ public class Talk : MonoBehaviour
 
         dialogeBox.GetComponent<TextMeshProUGUI>().SetText(organisedDialogue.Pop());
         dialogeBox.GetComponent<DialogueQueue>().dialogueQueue = organisedDialogue;
+        Debug.Log(organisedDialogue);
+        if (organisedDialogue.Count > 1)
+        {
+            next.SetActive(true);
+        }
     }
 }

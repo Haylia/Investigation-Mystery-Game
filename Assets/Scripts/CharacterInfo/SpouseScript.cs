@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpouseScript : CharacterInfo
 {
-    string characterName = "Spouse";
+    string characterName = "Silvia";
 
     bool accused = false;
     bool successful = false;
