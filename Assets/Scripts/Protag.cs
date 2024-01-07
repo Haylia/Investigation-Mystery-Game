@@ -8,6 +8,7 @@ public class Protag : MonoBehaviour
     private GameObject inventory;
     private GameObject menu;
     private GameObject explain;
+    private GameObject canvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,7 @@ public class Protag : MonoBehaviour
         menu.SetActive(false);
         explain = transform.Find("ProtagCanvas/Explain").gameObject;
         explain.SetActive(false);
+
     }
 
     // Update is called once per frame

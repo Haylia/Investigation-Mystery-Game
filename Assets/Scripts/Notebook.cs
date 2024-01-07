@@ -129,7 +129,7 @@ public class Notebook : MonoBehaviour //shows recorded testimony
                 page.AddComponent<Image>();
                 page.AddComponent<VerticalLayoutGroup>();
                 page.AddComponent<Scrollbar>();
-                page.GetComponent<Image>().color = Color.black;
+                //page.GetComponent<Image>().color = Color.black;
       
 
                 name.transform.SetParent(page.transform);
