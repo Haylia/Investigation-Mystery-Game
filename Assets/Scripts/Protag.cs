@@ -12,6 +12,7 @@ public class Protag : MonoBehaviour
 
     private GameObject canvas;
 
+
     Rigidbody2D rb;
     BoxCollider2D bcollider;
     SpriteRenderer sr;
@@ -138,5 +139,3 @@ void UseStairs(GameObject gameObject)
     }
 }
 }
-
-
