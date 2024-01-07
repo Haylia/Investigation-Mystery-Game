@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MaidInfo : CharacterInfo
+public class ButlerInfo : CharacterInfo
 {
-    string characterName = "Maid";
+    string characterName = "Butler";
 
     bool accused = false;
     bool successful = false;
@@ -35,80 +35,62 @@ public class MaidInfo : CharacterInfo
     // Start is called before the first frame update
     void Start()
     {
-        //set pressure responses
+        //pressure response
 
-        //set all show
-        allShow.Add("Newspaper", TestimonyMasterList.MaidDenial);
+        idToTestimony.Add("ButlerIntro", TestimonyMasterList.ButlerIntro);
+        idToTestimony.Add("ButlerHost", TestimonyMasterList.ButlerHost);
+        idToTestimony.Add("ButlerLocation", TestimonyMasterList.ButlerLocation);
+        idToTestimony.Add("ButlerThoughts", TestimonyMasterList.ButlerThoughts);
+        idToTestimony.Add("ButlerBreak", TestimonyMasterList.ButlerBreak);
+        idToTestimony.Add("ButlerRounds", TestimonyMasterList.ButlerRounds);
+        idToTestimony.Add("ButlerReaction", TestimonyMasterList.ButlerReaction);
 
-
-        //set id to testimony & testimony to id
-
-        //idToTestimony.Add("", "");
-        idToTestimony.Add("MaidIntro",TestimonyMasterList.MaidIntro);
-        idToTestimony.Add("MaidLying", TestimonyMasterList.MaidLying);
-        idToTestimony.Add("MaidHost", TestimonyMasterList.MaidHost);
-        idToTestimony.Add("MaidLocation", TestimonyMasterList.MaidLocation);
-        idToTestimony.Add("Firing", TestimonyMasterList.Firing);
-
-        foreach(KeyValuePair<string,string> entry in idToTestimony)
+        foreach (KeyValuePair<string, string> entry in idToTestimony)
         {
             testimonyToID.Add(entry.Value, entry.Key);
         }
 
-        //use ids for responses
-
-        //set dialogue option to responses
-        // new dictionary for each op
-        // dict flag to response 
-        Dictionary<string, string> set0 = new Dictionary<string, string>();
-        set0.Add("flag", "id");
-
-        //<DEFAULT>
         Dictionary<string, string> def0 = new Dictionary<string, string>();
-        def0.Add("default", "MaidIntro");
-
         Dictionary<string, string> def1 = new Dictionary<string, string>();
-        def1.Add("default", "MaidHost");
-
         Dictionary<string, string> def2 = new Dictionary<string, string>();
-        def2.Add("default", "MaidLocation");
-
         Dictionary<string, string> def3 = new Dictionary<string, string>();
-        def3.Add("default", "Firing");
+        Dictionary<string, string> b = new Dictionary<string, string>();
+        Dictionary<string, string> rounds = new Dictionary<string, string>();
+        Dictionary<string, string> reaction = new Dictionary<string, string>();
 
-        // dict set1.Add("op1",dict of flags to responses)
-        allDialogue.Add(TestimonyMasterList.MaidDefIntro, def0);
-        allDialogue.Add(TestimonyMasterList.MaidDefHost, def1);
-        allDialogue.Add(TestimonyMasterList.MaidDefLocation, def2);
-        allDialogue.Add(TestimonyMasterList.MaidDefThoughts, def3);
+        def0.Add("default", "ButlerIntro");
+        def1.Add("default", "ButlerHost");
+        def2.Add("default", "ButlerLocation");
+        def3.Add("default","ButlerThoughts");
+        b.Add("default", "ButlerBreak");
+        rounds.Add("default", "ButlerRounds");
+        reaction.Add("default", "ButlerReaction");
 
-        //set dialogue sets by flag
-        //flag to list of dialogue options
+        allDialogue.Add(TestimonyMasterList.ButlerDefIntro,def0);
+        allDialogue.Add(TestimonyMasterList.ButlerDefHost, def1);
+        allDialogue.Add(TestimonyMasterList.ButlerDefLocation, def2);
+        allDialogue.Add(TestimonyMasterList.ButlerDefThoughts, def3);
+        allDialogue.Add(TestimonyMasterList.ButlerConfirmBreak, b);
+        allDialogue.Add(TestimonyMasterList.ButlerBreakRounds, rounds);
+        allDialogue.Add(TestimonyMasterList.ButlerChefThoughts, reaction);
 
         List<string> defaultOps = new List<string>();
-        defaultOps.Add(TestimonyMasterList.MaidDefIntro);
-        defaultOps.Add(TestimonyMasterList.MaidDefHost);
-        defaultOps.Add(TestimonyMasterList.MaidDefLocation);
-        defaultOps.Add(TestimonyMasterList.MaidDefThoughts);
+        defaultOps.Add(TestimonyMasterList.ButlerDefIntro);
+        defaultOps.Add(TestimonyMasterList.ButlerDefHost);
+        defaultOps.Add(TestimonyMasterList.ButlerDefLocation);
+        defaultOps.Add(TestimonyMasterList.ButlerDefThoughts);
+        List<string> bOp = new List<string>();
+        bOp.Add(TestimonyMasterList.ButlerConfirmBreak);
+        List<string> roundsOp = new List<string>();
+        roundsOp.Add(TestimonyMasterList.ButlerBreakRounds);
+        List<string> chefOp = new List<string>();
+        chefOp.Add(TestimonyMasterList.ButlerChefThoughts);
+
         flagToDialogueOptions.Add("default", defaultOps);
+        flagToDialogueOptions.Add("heardStaffBreak", bOp);
+        flagToDialogueOptions.Add("heardButlerBreak", roundsOp);
+        flagToDialogueOptions.Add("heardChefThoughts", chefOp);
 
-        //<SPOUSEHOSTSECRETS>
-        Dictionary<string, string> secret = new Dictionary<string, string>();
-        secret.Add("default", "MaidLying");
-        allDialogue.Add(TestimonyMasterList.MaidSecrets, secret);
-        List<string> secretOp = new List<string>();
-        secretOp.Add(TestimonyMasterList.MaidSecrets);
-        flagToDialogueOptions.Add("heardSpouseHostSecrets", secretOp);
-
-
-        //SHOWN FLAGS: "shown" + itemName
-        //RECORDED TESTIMONY FLAG: "heard" + testimony id
-        //RECORDED ITEM FLAG; "has" + itemName
-
-
-
-        //set all dialogue (not organised into sets)
-        //dict of ops to dict of flags to res
     }
 
     public override string getDefaultShow()

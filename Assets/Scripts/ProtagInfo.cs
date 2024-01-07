@@ -83,6 +83,16 @@ public class ProtagInfo : MonoBehaviour
         inventory.Add(item);
         evidence.Add(itemName);
         allFlags.Add("has" + itemName, true);
+
+        string ledgerName = "Ledger";
+        string bankstatementName = "BankStatement";
+        if (allFlags.ContainsKey("has" + ledgerName) && allFlags.ContainsKey("has" + bankstatementName))
+        {
+            if (!allFlags.ContainsKey("has" + ledgerName + "&" + bankstatementName))
+            {
+                allFlags.Add("has" + ledgerName + "&" + bankstatementName, true);
+            }
+        }
     }
 
     public void addTestimony(string testimonyID, string testimonyContents, GameObject character)
@@ -126,7 +136,7 @@ public class ProtagInfo : MonoBehaviour
             if (accuseDialogue[character].ContainsKey(evidence))
             {
                 currentAccuseDialogue = accuseDialogue[character][evidence];
-                int p = EvidenceMasterList.evidenceToCharacters[evidence][character.GetComponent<CharacterInfo>().getName()];
+                float p = EvidenceMasterList.evidenceToCharacters[evidence][character.GetComponent<CharacterInfo>().getName()];
                 character.GetComponent<CharacterInfo>().increasePressure(p);
                 presentedEvidence.Add(evidence);
             }
