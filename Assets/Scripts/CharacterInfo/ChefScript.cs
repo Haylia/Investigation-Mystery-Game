@@ -45,7 +45,7 @@ public class ChefScript : CharacterInfo
         idToTestimony.Add("ChefLocation", TestimonyMasterList.ChefLocation);
         idToTestimony.Add("ChefThoughts", TestimonyMasterList.ChefThoughts);
         idToTestimony.Add("KnifeLocation", TestimonyMasterList.KnifeLocation);
-        idToTestimony.Add("KnifeOthers", TestimonyMasterList.KnifeOthers);
+        idToTestimony.Add("KitchenOthers", TestimonyMasterList.KitchenOthers);
 
         Dictionary<string, string> def0 = new Dictionary<string, string>();
         Dictionary<string, string> def1 = new Dictionary<string, string>();
@@ -59,14 +59,14 @@ public class ChefScript : CharacterInfo
         def2.Add("default", "ChefLocation");
         def3.Add("default", "ChefThoughts");
         knife0.Add("default", "KnifeLocation");
-        knife1.Add("default", "KnifeOthers");
+        knife1.Add("default", "KitchenOthers");
 
         allDialogue.Add(TestimonyMasterList.ChefDefIntro, def0);
         allDialogue.Add(TestimonyMasterList.ChefDefHost, def1);
         allDialogue.Add(TestimonyMasterList.ChefDefLocation, def2);
         allDialogue.Add(TestimonyMasterList.ChefDefThoughts, def3);
         allDialogue.Add(TestimonyMasterList.ChefKnifeLocation, knife0);
-        allDialogue.Add(TestimonyMasterList.ChefKnifeOthers, knife1);
+        allDialogue.Add(TestimonyMasterList.ChefKitchenOthers, knife1);
 
         List<string> defaultOps = new List<string>();
         List<string> knifeOps = new List<string>();
@@ -76,7 +76,7 @@ public class ChefScript : CharacterInfo
         defaultOps.Add(TestimonyMasterList.ChefDefLocation);
         defaultOps.Add(TestimonyMasterList.ChefDefThoughts);
         knifeOps.Add(TestimonyMasterList.ChefKnifeLocation);
-        knifeOps.Add(TestimonyMasterList.ChefKnifeOthers);
+        knifeOps.Add(TestimonyMasterList.ChefKitchenOthers);
 
         flagToDialogueOptions.Add("default", defaultOps);
         flagToDialogueOptions.Add("shownKnife", knifeOps);
