@@ -5,8 +5,9 @@ using UnityEngine;
 public class ProtagInfo : MonoBehaviour
 {
 
-    int lives = 2;
+    public int lives = 2;
     public bool accusing;
+    public bool explaining;
 
     Dictionary<string, bool> allFlags;
     Dictionary<string, bool> itemFlags;
@@ -20,12 +21,13 @@ public class ProtagInfo : MonoBehaviour
     Dictionary<GameObject, List<string>> characterToTestimony;
     //character to dict item to response
     Dictionary<GameObject, Dictionary<string, string>> accuseDialogue;
-    string currentAccuseDialogue;
+    public string currentAccuseDialogue;
 
     // Start is called before the first frame update
     void Start()
     {
         accusing = false;
+        explaining = false;
         allFlags = new Dictionary<string, bool>();
         itemFlags = new Dictionary<string, bool>();
         evidence = new List<string>();

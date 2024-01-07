@@ -81,6 +81,11 @@ public class ExampleCharacter : CharacterInfo
         return testimonyToID;
     }
 
+    override public Dictionary<string, string> getIDToTestimony()
+    {
+        return idToTestimony;
+    }
+
     public override Dictionary<string, bool> getAllFlags()
     {
         return allFlags;

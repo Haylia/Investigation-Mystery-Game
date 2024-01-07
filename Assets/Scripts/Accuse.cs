@@ -13,6 +13,8 @@ public class Accuse : MonoBehaviour
     private int turns;
     private bool waiting;
     private GameObject protagMenu;
+    private GameObject explain;
+    private ProtagInfo protagInfo;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,8 @@ public class Accuse : MonoBehaviour
         evidenceSelect = transform.Find("EvidenceSelect").gameObject;
         waiting = false;
         protagMenu = GameObject.Find("ProtagMenu");
+        explain = GameObject.Find("Explain");
+        protagInfo = GameObject.Find("Protag").GetComponent<ProtagInfo>();
     }
 
     // Update is called once per frame
@@ -57,8 +61,23 @@ public class Accuse : MonoBehaviour
             protagMenu.SetActive(true);
             protagMenu.transform.Find("ClosePMenu").gameObject.SetActive(false);
             yield return new WaitWhile(() => waiting);
-            //wait for protag dialogue to end
             protagMenu.SetActive(false);
+
+            //wait for protag dialogue to end
+            protagInfo.explaining = true;
+            yield return new WaitWhile(() => protagInfo.explaining);
+
+            //character response
+            dialogeBox.GetComponent<TextMeshProUGUI>().SetText(character.currentResponse);
+            character.responding = true;
+            dialogeBox.SetActive(true);
+
+            yield return new WaitWhile(() => character.responding);
+
+            //wait for  character response to end
+
+            //evidenceSelect.GetComponent<EvidenceSelect>().clear();
+
             //turns goes up if pressure has decreased or little to no change
             if (System.Math.Floor(pressureNow) <= System.Math.Floor(pressureBefore))
             {
@@ -70,10 +89,8 @@ public class Accuse : MonoBehaviour
                 turns = 0;
             }
 
-            //character response
-            dialogeBox.GetComponent<TextMeshProUGUI>().SetText(character.currentResponse);
         }
-        //evidenceSelect.GetComponent<EvidenceSelect>().clear();
+
         if (pressureNow > 5)
         {
             character.successfulAccusation();
@@ -82,7 +99,24 @@ public class Accuse : MonoBehaviour
         {
             character.failedAccusation();
         }
+
+        GameObject.Find("SceneMaster").GetComponent<SceneMaster>().checkEndingReached();
     }
+
+    private void explaintStart()
+    {
+        explain.SetActive(true);
+        string dialogue = protagMenu.GetComponentInParent<ProtagInfo>().currentAccuseDialogue;
+        Stack<string> organisedDialogue = new Stack<string>();
+        string[] dialogueSplit = dialogue.Split("***");
+        foreach (string s in dialogueSplit)
+        {
+            organisedDialogue.Push(s);
+        }
+        explain.GetComponent<TextMeshProUGUI>().SetText(organisedDialogue.Pop());
+        explain.GetComponent<ExplainQueue>().explainQueue = organisedDialogue;
+    }
+
     
     public void evidenceSelected(string evidence)
     {
