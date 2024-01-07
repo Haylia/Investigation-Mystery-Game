@@ -44,12 +44,12 @@ public class Notebook : MonoBehaviour //shows recorded testimony
         previousPage = transform.Find("PreviousPage").gameObject;
         // set up testmony id to display id
         // set up character names
-        characterNames.Add("Margaret");
-        characterNames.Add("Silvia");
-        characterNames.Add("Agnes");
-        characterNames.Add("Bernard");
-        characterNames.Add("Chef");
-        characterNames.Add("Bartholomew");
+        //characterNames.Add("Margaret");
+       //characterNames.Add("Silvia");
+        //characterNames.Add("Agnes");
+        //characterNames.Add("Bernard");
+       // characterNames.Add("Chef");
+        //characterNames.Add("Bartholomew");
     }
 
     // Update is called once per frame
@@ -80,6 +80,7 @@ public class Notebook : MonoBehaviour //shows recorded testimony
             var p1 = nameToPage[characterNames[currentPage]];
             p1.SetActive(true);
             p1.transform.SetParent(pageDisplay.transform);
+            nextPage.SetActive(false);
         }
 
         else if (currentPage <= nameToPage.Count + 1) //show 2 pages
@@ -91,26 +92,35 @@ public class Notebook : MonoBehaviour //shows recorded testimony
             p2.SetActive(true);
             p2.transform.SetParent(pageDisplay.transform);
         }
+        if (currentPage == 0)
+        {
+            previousPage.SetActive(false);
+        }
+
     }
 
     void hidePages()
     {
-        //GameObject pagesDisplay = GameObject.Find("PageDisplay");
         pageDisplay.transform.DetachChildren();
+        //GameObject pagesDisplay = GameObject.Find("PageDisplay");
+        if (currentPage <= nameToPage.Count) // show 1 page
+        {
+            Debug.Log("hiding page " + characterNames[currentPage]);
+            nameToPage[characterNames[currentPage]].SetActive(false);
+        }
+     
 
-        if (currentPage <= nameToPage.Count + 1) //show 2 pages
+        else if (currentPage <= nameToPage.Count + 1) //show 2 pages
         {
             nameToPage[characterNames[currentPage]].SetActive(false);
             nameToPage[characterNames[currentPage + 1]].SetActive(false);
         }
-        else if (currentPage <= nameToPage.Count) // show 1 page
-        {
-            nameToPage[characterNames[currentPage]].SetActive(false);
-        }
+
     }
 
     void createPages()
     {
+        Debug.Log("creating pages");
         foreach(GameObject character in characterToTestimonyID.Keys)
         {
             GameObject page;
@@ -129,13 +139,15 @@ public class Notebook : MonoBehaviour //shows recorded testimony
                 page.AddComponent<Image>();
                 page.AddComponent<VerticalLayoutGroup>();
                 page.AddComponent<Scrollbar>();
-                //page.GetComponent<Image>().color = Color.black;
+                page.GetComponent<Image>().color = Color.black;
       
 
                 name.transform.SetParent(page.transform);
                 nameToPage.Add(character.GetComponent<CharacterInfo>().getName(),page);
 
                 page.SetActive(false);
+                characterNames.Add(character.GetComponent<CharacterInfo>().getName());
+                Debug.Log("new page for " + character.GetComponent<CharacterInfo>().getName() + "at " + page);
             }
             else
             {
@@ -203,6 +215,7 @@ public class Notebook : MonoBehaviour //shows recorded testimony
                 GameObject testimonyContent = new GameObject();
                 testimonyContent.AddComponent<TextMeshProUGUI>();
                 testimonyContent.GetComponent<TextMeshProUGUI>().SetText(testimony[id]);
+                testimonyContent.GetComponent<TextMeshProUGUI>().fontSize = 20;
 
                 GameObject container = new GameObject();
                 container.AddComponent<RectTransform>();
@@ -216,6 +229,8 @@ public class Notebook : MonoBehaviour //shows recorded testimony
                 container.AddComponent<Selectable>();
                 container.AddComponent<Testimony>();
                 container.GetComponent<Testimony>().id = id;
+
+                container.GetComponent<Image>().color = Color.black;
 
                 idToContainer.Add(id, container);
             }

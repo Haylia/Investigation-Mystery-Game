@@ -34,15 +34,8 @@ public class Talk : MonoBehaviour
 
     public void talkStart()
     {
-        OptionButton[] opButtons = dialogeBox.GetComponentsInChildren<OptionButton>();
 
-        if (opButtons.Length == 0)
-        {
-            foreach (OptionButton b in opButtons)
-            {
-                Destroy(b.gameObject);
-            }
-        }
+        //dialogueOptions.SetActive(true);
         character.talk();
         generateOptions(character.getAvailableTalk().Keys.ToList());
 
@@ -52,8 +45,19 @@ public class Talk : MonoBehaviour
         //dialogeBox.transform.Find("Record").gameObject.SetActive(true);
     }
 
+
     void generateOptions(List<string> options)
     {
+        Debug.Log("generating options");
+        Debug.Log(dialogueOptions.transform.childCount);
+
+        foreach (Transform child in dialogueOptions.transform)
+        {
+            child.gameObject.SetActive(false);
+            Destroy(child.gameObject);
+        }
+
+
         foreach (string op in options)
         {
             GameObject b = new GameObject();
@@ -62,7 +66,6 @@ public class Talk : MonoBehaviour
             b.AddComponent<TextMeshProUGUI>();
             b.GetComponent<TextMeshProUGUI>().SetText(op);
             b.GetComponent<Button>().onClick.AddListener(delegate { optionSelected(op); });
-            b.AddComponent<OptionButton>();
             //b.transform.SetParent(dialogueOptions.transform.Find("/Viewport/Content"));
             b.transform.SetParent(dialogueOptions.transform);
             b.SetActive(true);
@@ -76,7 +79,7 @@ public class Talk : MonoBehaviour
         character.talking(option);
         dialogueOptions.SetActive(false);
         ////////////////////////////////////////////reemeber to change name
-        if (character.gameObject.GetComponent<CharacterInfo>().getName() == "Maid" && option == TestimonyMasterList.MaidDefThoughts)
+        if (character.gameObject.GetComponent<CharacterInfo>().getName() == "Margaret" && option == TestimonyMasterList.MaidDefThoughts)
         {
             GameObject.Find("Protag").GetComponent<ProtagInfo>().pickUpItem(GameObject.Find("NoticeOfDismissal"));
         }

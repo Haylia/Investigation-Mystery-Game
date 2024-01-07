@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CharacterScript : MonoBehaviour
 {
@@ -8,32 +9,46 @@ public class CharacterScript : MonoBehaviour
     private Character character;
     private CharacterInfo characterInfo;
 
-
+    private GameObject talk;
+    private GameObject show;
+    private GameObject accuse;
 
     private void OnMouseDown()
     {
-        character = gameObject.GetComponent<Character>();
-        characterInfo = gameObject.GetComponent<CharacterInfo>();
 
-        if (characterMenu.activeSelf)
+        if (EventSystem.current.IsPointerOverGameObject())
         {
-            characterMenu.SetActive(false);
+
         }
         else
         {
-            characterMenu.SetActive(true);
-            transform.Find("Canvas/CharacterMenu/Talk/DialogueOptions").gameObject.SetActive(false);
-            transform.Find("Canvas/CharacterMenu/DialogueBox/Next").gameObject.SetActive(false);
-            transform.Find("Canvas/CharacterMenu/DialogueBox/Record").gameObject.SetActive(false);
-            transform.Find("Canvas/CharacterMenu/DialogueBox/CloseDialogue").gameObject.SetActive(false);
-            transform.Find("Canvas/CharacterMenu/Accuse/EvidenceSelect").gameObject.SetActive(false);
-            transform.Find("Canvas/CharacterMenu/Accuse/EndAccusation").gameObject.SetActive(false);
-            transform.Find("Canvas/CharacterMenu/Show/ShowView").gameObject.SetActive(false);
-            transform.Find("Canvas/CharacterMenu/Show/CloseShow").gameObject.SetActive(false);
+            character = gameObject.GetComponent<Character>();
+            characterInfo = gameObject.GetComponent<CharacterInfo>();
+
+            if (characterMenu.activeSelf)
+            {
+                characterMenu.SetActive(false);
+            }
+            else
+            {
+                talk = transform.Find("Canvas/CharacterMenu/Talk").gameObject;
+                show = transform.Find("Canvas/CharacterMenu/Show").gameObject;
+                accuse = transform.Find("Canvas/CharacterMenu/Accuse").gameObject;
+
+                characterMenu.SetActive(true);
+                transform.Find("Canvas/CharacterMenu/Talk/DialogueOptions").gameObject.SetActive(false);
+                transform.Find("Canvas/CharacterMenu/DialogueBox/Next").gameObject.SetActive(false);
+                transform.Find("Canvas/CharacterMenu/DialogueBox/Record").gameObject.SetActive(false);
+                transform.Find("Canvas/CharacterMenu/DialogueBox/CloseDialogue").gameObject.SetActive(false);
+                transform.Find("Canvas/CharacterMenu/Accuse/EvidenceSelect").gameObject.SetActive(false);
+                transform.Find("Canvas/CharacterMenu/Accuse/EndAccusation").gameObject.SetActive(false);
+                transform.Find("Canvas/CharacterMenu/Show/ShowView").gameObject.SetActive(false);
+                transform.Find("Canvas/CharacterMenu/Show/CloseShow").gameObject.SetActive(false);
+            }
+
+
+            character.characterClicked();
         }
-
-
-        character.characterClicked();
     }
 
 
@@ -54,4 +69,5 @@ public class CharacterScript : MonoBehaviour
     {
         characterMenu.SetActive(false);
     }
+
 }

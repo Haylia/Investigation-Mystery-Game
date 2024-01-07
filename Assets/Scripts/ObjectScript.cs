@@ -15,36 +15,43 @@ public class ObjectScript : MonoBehaviour
 
     public void OnMouseDown()
     {
-        Debug.Log("Clicked");
-        Debug.Log(gameObject);
-        //show menu
-        //panel.SetActive
-        //if its the object
-
-        //item = gameObject.GetComponent<Item>();
-        //itemInfo = gameObject.GetComponent<ItemInfo>();
-
-
-        item.itemClicked();
-        item.Inspect();
-
-
-        if (itemPanel.activeSelf)
+        if (EventSystem.current.IsPointerOverGameObject())
         {
-            itemPanel.SetActive(false);
+
         }
         else
         {
-            itemPanel.SetActive(true);
+            Debug.Log("Clicked");
+            Debug.Log(gameObject);
+            //show menu
+            //panel.SetActive
+            //if its the object
+
+            //item = gameObject.GetComponent<Item>();
+            //itemInfo = gameObject.GetComponent<ItemInfo>();
+
+
+            item.itemClicked();
+            item.Inspect();
+
+
+            if (itemPanel.activeSelf)
+            {
+                itemPanel.SetActive(false);
+            }
+            else
+            {
+                itemPanel.SetActive(true);
+            }
+
+            Debug.Log(item.currentInspect);
+            transform.Find("Canvas/ItemInfo/ObjectDesc").gameObject.GetComponent<TextMeshProUGUI>().SetText(item.currentInspect);
+            transform.Find("Canvas/ItemInfo/ObjectName").gameObject.GetComponent<TextMeshProUGUI>().SetText(itemInfo.getName());
+
+            transform.Find("Canvas/ItemInfo/PickUp").gameObject.SetActive(itemInfo.canPickUp);
+
+            transform.Find("Canvas/ItemInfo/Present").gameObject.SetActive(protageInfo.accusing);
         }
-
-        Debug.Log(item.currentInspect);
-        transform.Find("Canvas/ItemInfo/ObjectDesc").gameObject.GetComponent<TextMeshProUGUI>().SetText(item.currentInspect);
-        transform.Find("Canvas/ItemInfo/ObjectName").gameObject.GetComponent<TextMeshProUGUI>().SetText(itemInfo.getName());
-
-        transform.Find("Canvas/ItemInfo/PickUp").gameObject.SetActive(itemInfo.canPickUp);
-
-        transform.Find("Canvas/ItemInfo/Present").gameObject.SetActive(protageInfo.accusing);
     }
 
 

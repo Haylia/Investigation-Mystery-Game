@@ -64,10 +64,10 @@ public class SpouseScript : CharacterInfo
         def1.Add("default", "SpouseHostDefault");
         def1.Add("heardFiredHost", "SpouseHostSecrets");
         def2.Add("default", "SpouseLocation");
-        def2.Add("default", "SpousePartner");
-        def2.Add("default", "HostReason");
-        def2.Add("default", "HostTiming");
-        def2.Add("default", "HostNecklace");
+        def3.Add("default", "SpousePartner");
+        def4.Add("default", "HostReason");
+        def5.Add("default", "HostTiming");
+        def6.Add("default", "HostNecklace");
 
         allDialogue.Add(TestimonyMasterList.SpouseDefIntro, def0);
         allDialogue.Add(TestimonyMasterList.SpouseDefHost, def1);

@@ -124,7 +124,7 @@ public class ProtagInfo : MonoBehaviour
             @"You have recently lost a well paying career. Margaret claims Heather was very upset by this.
             It is possible you feared that she would divorce you and you were not willing to give up you wealthy lifestyle.");
         spouseEvidence.Add(
-            "newspaper",
+            "Newspaper",
             @"This newspaper demonstrates there has been a history of embezzlement at your company whilst you were employed there.
             A career criminal cannot be trusted!!!!");
 
@@ -138,6 +138,13 @@ public class ProtagInfo : MonoBehaviour
         maidEvidence.Add("KitchenOthers", kitchenOthers);
         maidEvidence.Add("SpeakingTube",speakingTube);
         maidEvidence.Add("MaidFamilyPhoto",
+            @"This is photo and this newspaper show that Margaret is related to someone you used to work at 
+            Silvia's company before being fired for embezzlement.
+            We have also learned that Silvia has been commiting embezzlement.
+            It is possible Silvia was responsible in the past too and framed Margaret's relative.
+            Margaret killed Heather out of revenge because she and Silvia were able to live luxeriously at the expense of
+            Margaret's family");
+        maidEvidence.Add("Newspaper",
             @"This is photo and this newspaper show that Margaret is related to someone you used to work at 
             Silvia's company before being fired for embezzlement.
             We have also learned that Silvia has been commiting embezzlement.
@@ -253,7 +260,7 @@ public class ProtagInfo : MonoBehaviour
             evidence.Add(testimonyID);
             allFlags.Add("heard" + testimonyID, true);
 
-            if (characterToTestimony.ContainsKey(gameObject))
+            if (characterToTestimony.ContainsKey(character))
             {
                 var t = characterToTestimony[character];
                 t.Add(testimonyID);
@@ -286,10 +293,110 @@ public class ProtagInfo : MonoBehaviour
         {
             if (accuseDialogue[character.GetComponent<CharacterInfo>().getName()].ContainsKey(evidence))
             {
-                currentAccuseDialogue = accuseDialogue[character.GetComponent<CharacterInfo>().getName()][evidence];
-                float p = EvidenceMasterList.evidenceToCharacters[evidence][character.GetComponent<CharacterInfo>().getName()];
-                character.GetComponent<CharacterInfo>().increasePressure(p);
-                presentedEvidence.Add(evidence);
+
+                //ledger req bank statement
+                if (evidence == "BankStatement" && !presentedEvidence.Contains("Ledger"))
+                {
+                    currentAccuseDialogue = accuseDialogue[character.GetComponent<CharacterInfo>().getName()][evidence];
+                    float p = EvidenceMasterList.evidenceToCharacters[evidence][character.GetComponent<CharacterInfo>().getName()];
+                    character.GetComponent<CharacterInfo>().increasePressure(p);
+                    presentedEvidence.Add(evidence);
+                }
+                else if (evidence == "BankStatement")
+                {
+                    //currentAccuseDialogue = accuseDialogue[character.GetComponent<CharacterInfo>().getName()][evidence];
+                    currentAccuseDialogue = accuseDialogue[character.GetComponent<CharacterInfo>().getName()]["Ledger"];
+                    float p = EvidenceMasterList.evidenceToCharacters[evidence][character.GetComponent<CharacterInfo>().getName()] + EvidenceMasterList.evidenceToCharacters["Ledger"][character.GetComponent<CharacterInfo>().getName()];
+                    character.GetComponent<CharacterInfo>().increasePressure(p);
+                    presentedEvidence.Add(evidence);
+                }
+
+                else if(evidence == "Ledger")
+                {
+                    if (presentedEvidence.Contains("BankStatement"))
+                    {
+                        currentAccuseDialogue = accuseDialogue[character.GetComponent<CharacterInfo>().getName()][evidence];
+                        float p = EvidenceMasterList.evidenceToCharacters[evidence][character.GetComponent<CharacterInfo>().getName()];
+                        character.GetComponent<CharacterInfo>().increasePressure(p);
+                        presentedEvidence.Add(evidence);
+                    }
+                    else
+                    {
+                        if (allFlags.ContainsKey("hasBankStatement"))
+                        {
+                            currentAccuseDialogue = @"This is will be useful but I need to present another piece of evidence for it to be effective";
+                        }
+                        else
+                        {
+                            currentAccuseDialogue = "THIS PROVES IT WAS YOU!!! ... oh ... ummm ... maybe not...";
+                            character.GetComponent<CharacterInfo>().decreasePressure(-1);
+                        }
+                        presentedEvidence.Add(evidence);
+                    }
+                }
+
+                //maid family photo and newspaper (and embezzlement)
+
+                else if (evidence == "Newspaper")
+                {
+                    if (!allFlags.ContainsKey("hasMaidFamilyPhoto"))
+                    {
+                        currentAccuseDialogue = "THIS PROVES IT WAS YOU!!! ... oh ... ummm ... maybe not...";
+                        character.GetComponent<CharacterInfo>().decreasePressure(-1);
+                    }
+                    else if (!allFlags.ContainsKey("hasLedger&BankStatement") && presentedEvidence.Contains("MaidFamilyPhoto"))
+                    {
+                        currentAccuseDialogue = @"This newspaper and photo of the maids family show that she had a relative who was caught embezzeling from Silvia's company and it became a scandle.
+                                                Silvia spoke out against this person despite their friendship so Margaret was seeking revenge.";
+                    }
+
+                    else if (!presentedEvidence.Contains("MaidFamilyPhoto"))
+                    {
+                        currentAccuseDialogue = @"This is will be useful but I need to present another piece of evidence for it to be effective";
+                    }
+
+                    else
+                    {
+                        currentAccuseDialogue = accuseDialogue[character.GetComponent<CharacterInfo>().getName()][evidence];
+                        float p = EvidenceMasterList.evidenceToCharacters[evidence][character.GetComponent<CharacterInfo>().getName()] + EvidenceMasterList.evidenceToCharacters["MaidFamilyPhoto"][character.GetComponent<CharacterInfo>().getName()];
+                        character.GetComponent<CharacterInfo>().increasePressure(p);
+                    }
+
+                    presentedEvidence.Add(evidence);
+                }
+                else if (evidence == "MaidFamilyPhoto")
+                {
+                    if (!allFlags.ContainsKey("hasNewspaper"))
+                    {
+                        currentAccuseDialogue = "THIS PROVES IT WAS YOU!!! ... oh ... ummm ... maybe not...";
+                        character.GetComponent<CharacterInfo>().decreasePressure(-1);
+                    }
+                    else if (!allFlags.ContainsKey("hasLedger&BankStatement") && presentedEvidence.Contains("Newspaper"))
+                    {
+                        currentAccuseDialogue = @"This newspaper and photo of the maids family show that she had a relative who was caught embezzeling from Silvia's company and it became a scandle.
+                                                Silvia spoke out against this person despite their friendship so Margaret was seeking revenge.";
+                    }
+                    else if (!presentedEvidence.Contains("Newspaper"))
+                    {
+                        currentAccuseDialogue = @"This is will be useful but I need to present another piece of evidence for it to be effective";
+                    }
+                    else
+                    {
+                        currentAccuseDialogue = accuseDialogue[character.GetComponent<CharacterInfo>().getName()][evidence];
+                        float p = EvidenceMasterList.evidenceToCharacters[evidence][character.GetComponent<CharacterInfo>().getName()] + EvidenceMasterList.evidenceToCharacters["Newspaper"][character.GetComponent<CharacterInfo>().getName()];
+                        character.GetComponent<CharacterInfo>().increasePressure(p);
+                    }
+
+                    presentedEvidence.Add(evidence);
+                }
+
+                else
+                {
+                    currentAccuseDialogue = accuseDialogue[character.GetComponent<CharacterInfo>().getName()][evidence];
+                    float p = EvidenceMasterList.evidenceToCharacters[evidence][character.GetComponent<CharacterInfo>().getName()];
+                    character.GetComponent<CharacterInfo>().increasePressure(p);
+                    presentedEvidence.Add(evidence);
+                }
             }
             else
             {
