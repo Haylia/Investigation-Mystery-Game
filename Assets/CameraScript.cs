@@ -21,7 +21,7 @@ public class CameraScript : MonoBehaviour
             //lock player Y to one of the three floors
             float playerx = player.transform.position.x;
             float playery = player.transform.position.y;
-            Vector3 targetPosition = new Vector3(playerx, playery + 5, -10);
+            Vector3 targetPosition = new Vector3(playerx, playery + 7, -10);
             transform.position = Vector3.Lerp(transform.position, targetPosition, 5f * Time.deltaTime);
         }
     }

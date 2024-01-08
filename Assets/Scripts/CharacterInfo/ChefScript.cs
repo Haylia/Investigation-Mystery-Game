@@ -47,6 +47,11 @@ public class ChefScript : CharacterInfo
         idToTestimony.Add("KnifeLocation", TestimonyMasterList.KnifeLocation);
         idToTestimony.Add("KitchenOthers", TestimonyMasterList.KitchenOthers);
 
+        foreach (KeyValuePair<string, string> entry in idToTestimony)
+        {
+            testimonyToID.Add(entry.Value, entry.Key);
+        }
+
         Dictionary<string, string> def0 = new Dictionary<string, string>();
         Dictionary<string, string> def1 = new Dictionary<string, string>();
         Dictionary<string, string> def2 = new Dictionary<string, string>();
