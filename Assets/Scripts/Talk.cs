@@ -43,6 +43,12 @@ public class Talk : MonoBehaviour
 
         //dialogeBox.transform.Find("Next").gameObject.SetActive(true);
         //dialogeBox.transform.Find("Record").gameObject.SetActive(true);
+
+    }
+
+    public void closeDialogueOptions()
+    {
+        dialogueOptions.SetActive(false);
     }
 
 

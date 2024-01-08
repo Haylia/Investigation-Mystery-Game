@@ -38,6 +38,11 @@ public class SceneMaster : MonoBehaviour
             }
         }
 
+        if (protagInfo.getAllFlags().ContainsKey("hasLedger&BankStatement") && ending == "Margaret")
+        {
+            ending = ending + "2";
+        }
+
         if (ending != "")
         {
             endingStart(ending);

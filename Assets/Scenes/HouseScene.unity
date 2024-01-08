@@ -271,7 +271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aee7b12ac12a754cae5e41d261de8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canPickUp: 0
   canPickUp: 1
   pickedUp: 0
 --- !u!1 &105065604
@@ -539,7 +538,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af54c99f1f841154ab22484a5ab96917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canPickUp: 0
   canPickUp: 1
   pickedUp: 0
 --- !u!1 &132960455
@@ -2625,7 +2623,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72aca669d5e1f0c489f6630192c8558c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canPickUp: 0
   canPickUp: 1
   pickedUp: 0
 --- !u!1001 &834418051
@@ -2739,8 +2736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e63c28d62b0d0ea4eb8344247516df3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canPickUp: 0
-  canPickUp: 0
+  canPickUp: 1
   pickedUp: 0
 --- !u!1001 &855408073
 PrefabInstance:
@@ -3211,8 +3207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294ff6dc762dd1c4eb2fa2ec97693f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canPickUp: 0
-  canPickUp: 0
+  canPickUp: 1
   pickedUp: 0
 --- !u!1 &970203383 stripped
 GameObject:
@@ -3231,8 +3226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf09f33feea010149bf9d3cb58103e20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canPickUp: 0
-  canPickUp: 0
+  canPickUp: 1
   pickedUp: 0
 --- !u!1 &996262834
 GameObject:
@@ -6410,7 +6404,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cf43c1ad5ff18545b16f1ce3fb66493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canPickUp: 0
   canPickUp: 1
   pickedUp: 0
 --- !u!1 &1994213931
@@ -6842,7 +6835,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b93e6d7d963334498e25e34a6f1193e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canPickUp: 0
   canPickUp: 1
   pickedUp: 0
 --- !u!1001 &2079320682
@@ -6856,6 +6848,10 @@ PrefabInstance:
     - target: {fileID: 1374257020451204340, guid: 366054fa38eaced4086365e65d968b3c, type: 3}
       propertyPath: m_Name
       value: Newspaper
+      objectReference: {fileID: 0}
+    - target: {fileID: 2762319115755299050, guid: 366054fa38eaced4086365e65d968b3c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4138403707579355998, guid: 366054fa38eaced4086365e65d968b3c, type: 3}
       propertyPath: m_LocalScale.x
@@ -6964,7 +6960,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f24e78eaa0d034645934177af5f1f296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canPickUp: 0
   canPickUp: 1
   pickedUp: 0
 --- !u!1001 &2120316388
@@ -7086,7 +7081,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834a4fe7dbca1a943addb80be4d7ffb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canPickUp: 0
   canPickUp: 1
   pickedUp: 0
 --- !u!1001 &3251044389678780625
@@ -7375,6 +7369,22 @@ PrefabInstance:
     - target: {fileID: 4502736132519856019, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374497351722042249, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
+      propertyPath: m_CellSize.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374497351722042249, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
+      propertyPath: m_CellSize.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374497351722042249, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
+      propertyPath: m_Padding.m_Top
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374497351722042249, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
+      propertyPath: m_Padding.m_Left
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6474272650260607441, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
       propertyPath: m_AnchorMax.x

@@ -53,5 +53,7 @@ public class DialogueQueue : MonoBehaviour
         gameObject.GetComponentInParent<Character>().talkEnd();
         recordButton.SetActive(false);
         closeButton.SetActive(false);
+
+
     }
 }

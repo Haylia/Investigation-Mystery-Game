@@ -56,6 +56,7 @@ public class NewspaperInfo : ItemInfo
 
     public override void setCanPickUp(bool b)
     {
+        Debug.Log("set pick up");
         canPickUp = b;
     }
 

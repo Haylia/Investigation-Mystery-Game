@@ -6,7 +6,7 @@ public class NoticeInfo : ItemInfo
 {
     string itemName = "NoticeOfDismissal";
 
-    public new bool canPickUp = true;
+    public bool canPickUp = true;
     public bool pickedUp = false;
 
     bool inspected = false;
