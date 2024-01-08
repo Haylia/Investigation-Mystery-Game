@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 public class Item : MonoBehaviour
@@ -89,6 +90,8 @@ public class Item : MonoBehaviour
         {
             currentInspect = allInspect["default"];
         }
+
+        Regex.Replace(currentInspect, @"\s+", " ");
     }
 
     public void InspectEnd()
@@ -130,6 +133,8 @@ public class Item : MonoBehaviour
 
             itemInfo.setFlag("pickedUp", true);
             itemInfo.setFlag("canPickUp", false);
+
+            Debug.Log("picked up" + itemInfo.getName());
         }
     }
 }

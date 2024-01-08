@@ -250,6 +250,8 @@ public class ProtagInfo : MonoBehaviour
                 allFlags.Add("has" + ledgerName + "&" + bankstatementName, true);
             }
         }
+
+        Debug.Log(item.GetComponent<ItemInfo>().getName() + " picked up protag");
     }
 
     public void addTestimony(string testimonyID, string testimonyContents, GameObject character)
@@ -265,7 +267,8 @@ public class ProtagInfo : MonoBehaviour
                 var t = characterToTestimony[character];
                 t.Add(testimonyID);
 
-                characterToTestimony.Add(character, t);
+                characterToTestimony[character] = t;
+                //characterToTestimony.Add(character, t);
             }
             else
             {

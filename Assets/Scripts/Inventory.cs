@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour // shows picked up items
 {
@@ -10,6 +12,7 @@ public class Inventory : MonoBehaviour // shows picked up items
     private GameObject inventoryContent;
 
     List<GameObject> inventory = new List<GameObject>();
+    List<string> added = new List<string>();
     // Start is called before the first frame update
     void Start()
     {
@@ -27,14 +30,111 @@ public class Inventory : MonoBehaviour // shows picked up items
 
     public void onOpen()
     {
+        Debug.Log("inventory opened");
         inventory = protagInfo.getInventory();
 
         foreach (GameObject item in inventory)
         {
-            if (item.transform.parent != inventoryContent.transform)
+            if (!added.Contains(item.GetComponent<ItemInfo>().getName()))
             {
-                item.transform.SetParent(inventoryContent.transform);
+                GameObject canvas = new GameObject();
+                canvas.AddComponent<VerticalLayoutGroup>();
+                //canvas.GetComponent<VerticalLayoutGroup>().childControlHeight = false;
+                //canvas.GetComponent<VerticalLayoutGroup>().childControlWidth = false;
+
+                GameObject i = new GameObject();
+                i.AddComponent<TextMeshProUGUI>();
+                i.GetComponent<TextMeshProUGUI>().SetText(item.GetComponent<ItemInfo>().getName());
+                i.GetComponent<TextMeshProUGUI>().fontSize = 12;
+                GameObject copy = new GameObject();
+                copy = Instantiate(item);
+                foreach (Transform child in copy.transform)
+                {
+                    child.gameObject.SetActive(false);
+                    Destroy(child.gameObject);
+                }
+                //Destroy(copy.GetComponent<ObjectScript>());
+                Sprite s = copy.GetComponent<SpriteRenderer>().sprite;
+                copy.AddComponent<Image>();
+                copy.GetComponent<Image>().sprite = s;
+
+
+                copy.AddComponent<Button>();
+                copy.GetComponent<Button>().onClick.AddListener(delegate { click(copy); });
+
+                copy.transform.SetParent(canvas.transform);
+                i.transform.SetParent(canvas.transform);
+                canvas.transform.SetParent(inventoryContent.transform);
+
+                //Destroy(copy.GetComponent<SpriteRenderer>().sprite);
+                added.Add(item.GetComponent<ItemInfo>().getName());
             }
+
+        }
+        inventoryView.SetActive(true);
+        inventoryContent.SetActive(true);
+
+
+    }
+
+    private void click(GameObject copy)
+    {
+        Debug.Log("inventory item clicked");
+
+        GameObject itemPanel;
+
+        if (copy.transform.childCount > 0)
+        {
+            itemPanel = copy.transform.Find("ItemPanel").gameObject;
+        }
+        else
+        {
+            itemPanel = new GameObject();
+            itemPanel.name = "ItemPanel";
+            itemPanel.SetActive(false);
+            itemPanel.AddComponent<RectTransform>();
+            itemPanel.transform.localPosition = Vector3.zero;
+            itemPanel.GetComponent<RectTransform>().sizeDelta = copy.GetComponent<RectTransform>().sizeDelta;
+
+            GameObject b = new GameObject();
+            b.name = "bg";
+            b.AddComponent<Image>();
+            b.GetComponent<Image>().color = Color.black;
+            //b.GetComponent<RectTransform>().sizeDelta = new Vector2(200,200);
+            b.GetComponent<RectTransform>().sizeDelta = itemPanel.GetComponent<RectTransform>().sizeDelta;
+
+
+            GameObject itemText = new GameObject();
+            itemText.name = "ItemText";
+            itemText.AddComponent<TextMeshProUGUI>();
+            itemText.GetComponent<TextMeshProUGUI>().fontSize = 12;
+            itemText.GetComponent<TextMeshProUGUI>().enableWordWrapping = true;
+            itemText.GetComponent<TextMeshProUGUI>().enableAutoSizing = true;
+            itemText.GetComponent<TextMeshProUGUI>().fontSizeMin = 1;
+            itemText.GetComponent<TextMeshProUGUI>().fontSizeMax = 12;
+            //itemText.GetComponent<RectTransform>().sizeDelta = new Vector2(200, 200);
+            itemText.GetComponent<RectTransform>().sizeDelta = itemPanel.GetComponent<RectTransform>().sizeDelta;
+
+            itemText.transform.SetParent(b.transform);
+            b.transform.SetParent(itemPanel.transform);
+            itemPanel.transform.SetParent(copy.transform);
+
+            itemText.transform.localPosition = Vector3.zero;
+            b.transform.localPosition = Vector3.zero;
+            itemPanel.transform.localPosition = Vector3.zero;
+            //itemPanel.AddComponent<Canvas>();
+        }
+
+        if (itemPanel.activeSelf)
+        {
+            itemPanel.SetActive(false);
+        }
+        else
+        {
+            copy.GetComponent<Item>().itemClicked();
+            copy.GetComponent<Item>().Inspect();
+            itemPanel.SetActive(true);
+            itemPanel.transform.Find("bg/ItemText").GetComponent<TextMeshProUGUI>().SetText(copy.GetComponent<Item>().currentInspect);
         }
     }
 }

@@ -6,7 +6,7 @@ public class TubeInfo : ItemInfo
 {
     string itemName = "SpeakingTube";
 
-    public new bool canPickUp = false;
+    public new bool canPickUp = true;
     public bool pickedUp = false;
 
     bool inspected = false;
@@ -37,6 +37,16 @@ public class TubeInfo : ItemInfo
     public override string getName()
     {
         return itemName;
+    }
+
+    public override bool getCanPickUp()
+    {
+        return canPickUp;
+    }
+
+    public override void setCanPickUp(bool b)
+    {
+        canPickUp = b;
     }
 
     override public Dictionary<string, string> getAllInspect()

@@ -17,7 +17,7 @@ public class ObjectScript : MonoBehaviour
     {
         if (EventSystem.current.IsPointerOverGameObject())
         {
-
+            Debug.Log("UI clicked");
         }
         else
         {
@@ -48,7 +48,7 @@ public class ObjectScript : MonoBehaviour
             transform.Find("Canvas/ItemInfo/ObjectDesc").gameObject.GetComponent<TextMeshProUGUI>().SetText(item.currentInspect);
             transform.Find("Canvas/ItemInfo/ObjectName").gameObject.GetComponent<TextMeshProUGUI>().SetText(itemInfo.getName());
 
-            transform.Find("Canvas/ItemInfo/PickUp").gameObject.SetActive(itemInfo.canPickUp);
+            transform.Find("Canvas/ItemInfo/PickUp").gameObject.SetActive(itemInfo.getCanPickUp());
 
             transform.Find("Canvas/ItemInfo/Present").gameObject.SetActive(protageInfo.accusing);
         }

@@ -10,7 +10,7 @@ public class start : MonoBehaviour
         GameObject.Find("ExplainCanvas").SetActive(false);
         GameObject.Find("ProtagMenu").SetActive(false);
         GameObject.Find("Foyer Room Shade").SetActive(false);
-         // GameObject.Find("Parlour Room Shade").SetActive(false);
+        // GameObject.Find("Parlour Room Shade").SetActive(false);
         GameObject.Find("Dining Room Shade").SetActive(false);
         GameObject.Find("Library Room Shade").SetActive(false);
         GameObject.Find("Lounge Room Shade").SetActive(false);
