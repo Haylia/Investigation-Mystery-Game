@@ -23,6 +23,7 @@ public class Protag : MonoBehaviour
     GameObject stairsup2;
     GameObject stairsdown1;
     GameObject stairsdown2;
+    public AudioSource sfxSrc;
 
     // Start is called before the first frame update
     void Start()
@@ -56,11 +57,12 @@ public class Protag : MonoBehaviour
     void Update()
     {
         rb.velocity = new Vector3(movementX * movementSpeed, movementY * movementSpeed);
-      
+
     }
 
     private void OnMouseDown()
     {
+        sfxSrc.PlayOneShot(sfxSrc.clip, 0.8f);
         openMenu();
     }
 
@@ -95,47 +97,45 @@ public class Protag : MonoBehaviour
     {
         menu.SetActive(false);
     }
-void OnTriggerEnter2D(Collider2D collision)
-{
-    Debug.Log("collided with " + collision.name);
-    int layer = collision.gameObject.layer;
-    string layerName = LayerMask.LayerToName(layer);
-    if (Input.GetKey(KeyCode.Space))
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("space clicked");
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Stairs"))
+        Debug.Log("collided with " + collision.name);
+        int layer = collision.gameObject.layer;
+        string layerName = LayerMask.LayerToName(layer);
+        if (Input.GetKey(KeyCode.Space))
         {
-            UseStairs(collision.gameObject);
-        }
-    }
-}
-
-void OnTriggerStay2D(Collider2D collision)
-{
-    int layer = collision.gameObject.layer;
-    string layerName = LayerMask.LayerToName(layer);
-
-    if (Input.GetKey(KeyCode.Space))
-    {
-        Debug.Log("space clicked");
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Stairs"))
-        {
-            UseStairs(collision.gameObject);
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Stairs"))
+            {
+                UseStairs(collision.gameObject);
+            }
         }
     }
 
-}
-
-void UseStairs(GameObject gameObject)
-{
-
-    if (gameObject == stairsup1 || gameObject == stairsup2)
+    void OnTriggerStay2D(Collider2D collision)
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y + 20, transform.position.z);
+        int layer = collision.gameObject.layer;
+        string layerName = LayerMask.LayerToName(layer);
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Stairs"))
+            {
+                UseStairs(collision.gameObject);
+            }
+        }
+
     }
-    if (gameObject == stairsdown1 || gameObject == stairsdown2)
+
+    void UseStairs(GameObject gameObject)
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y - 20, transform.position.z);
+        sfxSrc.PlayOneShot(sfxSrc.clip, 0.8f);
+        if (gameObject == stairsup1 || gameObject == stairsup2)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y + 20, transform.position.z);
+        }
+        if (gameObject == stairsdown1 || gameObject == stairsdown2)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y - 20, transform.position.z);
+        }
     }
-}
 }
