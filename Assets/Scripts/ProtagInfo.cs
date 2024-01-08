@@ -23,6 +23,8 @@ public class ProtagInfo : MonoBehaviour
     Dictionary<string, Dictionary<string, string>> accuseDialogue;
     public string currentAccuseDialogue;
 
+    private EvidenceMasterList evidenceMasterList;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,8 @@ public class ProtagInfo : MonoBehaviour
         characterToTestimony = new Dictionary<GameObject, List<string>>();
         //character -> evidence -> explanation
         accuseDialogue = new Dictionary<string, Dictionary<string, string>>();
+
+        evidenceMasterList = GameObject.Find("SceneMaster").GetComponent<EvidenceMasterList>();
         //
 
         Dictionary<string, string> spouseEvidence = new Dictionary<string, string>();
@@ -75,7 +79,7 @@ public class ProtagInfo : MonoBehaviour
             "HostNecklace",
             hostNecklace);
         butlerEvidence.Add(
-            "ButlerEvidence",
+            "ButlerRounds",
             butlerRounds);
         butlerEvidence.Add(
             "ChefThoughts",
@@ -301,7 +305,7 @@ public class ProtagInfo : MonoBehaviour
                 if (evidence == "BankStatement" && !presentedEvidence.Contains("Ledger"))
                 {
                     currentAccuseDialogue = accuseDialogue[character.GetComponent<CharacterInfo>().getName()][evidence];
-                    float p = EvidenceMasterList.evidenceToCharacters[evidence][character.GetComponent<CharacterInfo>().getName()];
+                    float p = evidenceMasterList.evidenceToCharacters[evidence][character.GetComponent<CharacterInfo>().getName()];
                     character.GetComponent<CharacterInfo>().increasePressure(p);
                     presentedEvidence.Add(evidence);
                 }
@@ -309,7 +313,7 @@ public class ProtagInfo : MonoBehaviour
                 {
                     //currentAccuseDialogue = accuseDialogue[character.GetComponent<CharacterInfo>().getName()][evidence];
                     currentAccuseDialogue = accuseDialogue[character.GetComponent<CharacterInfo>().getName()]["Ledger"];
-                    float p = EvidenceMasterList.evidenceToCharacters[evidence][character.GetComponent<CharacterInfo>().getName()] + EvidenceMasterList.evidenceToCharacters["Ledger"][character.GetComponent<CharacterInfo>().getName()];
+                    float p = evidenceMasterList.evidenceToCharacters[evidence][character.GetComponent<CharacterInfo>().getName()] + evidenceMasterList.evidenceToCharacters["Ledger"][character.GetComponent<CharacterInfo>().getName()];
                     character.GetComponent<CharacterInfo>().increasePressure(p);
                     presentedEvidence.Add(evidence);
                 }
@@ -319,7 +323,7 @@ public class ProtagInfo : MonoBehaviour
                     if (presentedEvidence.Contains("BankStatement"))
                     {
                         currentAccuseDialogue = accuseDialogue[character.GetComponent<CharacterInfo>().getName()][evidence];
-                        float p = EvidenceMasterList.evidenceToCharacters[evidence][character.GetComponent<CharacterInfo>().getName()];
+                        float p = evidenceMasterList.evidenceToCharacters[evidence][character.GetComponent<CharacterInfo>().getName()];
                         character.GetComponent<CharacterInfo>().increasePressure(p);
                         presentedEvidence.Add(evidence);
                     }
@@ -361,7 +365,7 @@ public class ProtagInfo : MonoBehaviour
                     else
                     {
                         currentAccuseDialogue = accuseDialogue[character.GetComponent<CharacterInfo>().getName()][evidence];
-                        float p = EvidenceMasterList.evidenceToCharacters[evidence][character.GetComponent<CharacterInfo>().getName()] + EvidenceMasterList.evidenceToCharacters["MaidFamilyPhoto"][character.GetComponent<CharacterInfo>().getName()];
+                        float p = evidenceMasterList.evidenceToCharacters[evidence][character.GetComponent<CharacterInfo>().getName()] + evidenceMasterList.evidenceToCharacters["MaidFamilyPhoto"][character.GetComponent<CharacterInfo>().getName()];
                         character.GetComponent<CharacterInfo>().increasePressure(p);
                     }
 
@@ -386,7 +390,7 @@ public class ProtagInfo : MonoBehaviour
                     else
                     {
                         currentAccuseDialogue = accuseDialogue[character.GetComponent<CharacterInfo>().getName()][evidence];
-                        float p = EvidenceMasterList.evidenceToCharacters[evidence][character.GetComponent<CharacterInfo>().getName()] + EvidenceMasterList.evidenceToCharacters["Newspaper"][character.GetComponent<CharacterInfo>().getName()];
+                        float p = evidenceMasterList.evidenceToCharacters[evidence][character.GetComponent<CharacterInfo>().getName()] + evidenceMasterList.evidenceToCharacters["Newspaper"][character.GetComponent<CharacterInfo>().getName()];
                         character.GetComponent<CharacterInfo>().increasePressure(p);
                     }
 
@@ -396,8 +400,13 @@ public class ProtagInfo : MonoBehaviour
                 else
                 {
                     currentAccuseDialogue = accuseDialogue[character.GetComponent<CharacterInfo>().getName()][evidence];
-                    float p = EvidenceMasterList.evidenceToCharacters[evidence][character.GetComponent<CharacterInfo>().getName()];
+                    Debug.Log("evidence: " + evidence);
+                    Debug.Log(character.GetComponent<CharacterInfo>().getName());
+                    Debug.Log(evidenceMasterList.evidenceToCharacters);
+                    Debug.Log(evidenceMasterList.evidenceToCharacters[evidence]);
+                    float p = evidenceMasterList.evidenceToCharacters[evidence][character.GetComponent<CharacterInfo>().getName()];
                     character.GetComponent<CharacterInfo>().increasePressure(p);
+                    
                     presentedEvidence.Add(evidence);
                 }
             }

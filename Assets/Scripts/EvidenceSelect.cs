@@ -33,6 +33,7 @@ public class EvidenceSelect : MonoBehaviour
 
     public void selected(string name)
     {
+        Debug.Log("selected evidence: " + name);
         accuse.evidenceSelected(name);
     }
 

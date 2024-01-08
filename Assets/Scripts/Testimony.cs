@@ -16,13 +16,14 @@ public class Testimony : MonoBehaviour, IPointerDownHandler
         {
             e = GameObject.Find("EvidenceSelect").GetComponent<EvidenceSelect>(); //should only find the current active one
             e.selected(id);
+            Debug.Log(id + " <- id");
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        id = "";
+        // id = "";
         p = GameObject.Find("Protag").GetComponent<ProtagInfo>();
     }
 

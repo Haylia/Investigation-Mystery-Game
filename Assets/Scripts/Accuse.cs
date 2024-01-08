@@ -66,8 +66,10 @@ public class Accuse : MonoBehaviour
     IEnumerator accuseLoop()
     {
         //ends if player does not increase pressure fast enough or pressure theshold reached
-        while (turns < 4 && pressureNow < 6)
+        while (turns < 4 && pressureNow < 4)
         {
+
+            character.transform.Find("Canvas/CharacterMenu/Accuse").gameObject.GetComponent<Button>().enabled = false;
             //evidence selection
             evidenceSelect.SetActive(true);
             waiting = true;
@@ -108,7 +110,7 @@ public class Accuse : MonoBehaviour
 
         }
 
-        if (pressureNow > 5)
+        if (pressureNow > 3)
         {
             character.successfulAccusation();
         }

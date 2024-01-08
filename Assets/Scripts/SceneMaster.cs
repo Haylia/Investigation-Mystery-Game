@@ -6,11 +6,17 @@ public class SceneMaster : MonoBehaviour
 {
     private CharacterInfo[] characters;
     private ProtagInfo protagInfo;
+    private GameObject endTextObj;
+    TMPro.TextMeshProUGUI tmp;
+    private GameObject endTextcanvas;
     // Start is called before the first frame update
     void Start()
     {
         characters = GameObject.Find("Characters").GetComponentsInChildren<CharacterInfo>();
         protagInfo = GameObject.Find("Protag").GetComponent<ProtagInfo>();
+        endTextObj = GameObject.Find("TheEndText");
+        tmp = endTextObj.GetComponent<TMPro.TextMeshProUGUI>();
+        endTextcanvas = GameObject.Find("Ending Text");
     }
 
     // Update is called once per frame
@@ -21,6 +27,7 @@ public class SceneMaster : MonoBehaviour
 
     public void checkEndingReached()
     {
+        Debug.Log(protagInfo.lives);
         string ending= "";
         if (protagInfo.lives == 0)
         {
@@ -42,15 +49,17 @@ public class SceneMaster : MonoBehaviour
         {
             ending = ending + "2";
         }
-
+        Debug.Log(ending);
         if (ending != "")
         {
             endingStart(ending);
         }
+        
     }
 
     public void endingStart(string e)
     {
+        Debug.Log("setting ending text");
         //if statement to decide text
         string endText;
         if(e == "failed")
@@ -150,12 +159,21 @@ public class SceneMaster : MonoBehaviour
 
                         Misfortune tests the sincerity of friends."; //TRUE ENDING:  maid jailed for the murder, necklace found on her person. silvia gets investigated for past financial crimes and eventually arrested. protag career improved
         }
+        else
+        {
+            endText = "";
+        }
         //place text on a panel
+
+        endText = endText + "\n press alt+f4 to exit";
+        endTextcanvas.SetActive(true);
+        endTextObj.SetActive(true);
+        Debug.Log("endText = " + endText);
+        tmp.text = endText;
         //Butler found new employer
         //Unable to track down Maid
         //Chef vibing in retirement
         //Partner took over business
         //Guest now only appears in public in black
-
-}
+    }
 }

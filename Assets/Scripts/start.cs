@@ -24,6 +24,8 @@ public class start : MonoBehaviour
         GameObject.Find("Guest 1 Room Shade").SetActive(false);
         GameObject.Find("Study Room Shade").SetActive(false);
         GameObject.Find("Guest 2 Room Shade").SetActive(false);
+        GameObject.Find("TheEndText").SetActive(false);
+        GameObject.Find("Ending Text").SetActive(false);
         gameObject.SetActive(false);
     }
 

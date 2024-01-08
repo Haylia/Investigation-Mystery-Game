@@ -245,7 +245,7 @@ public class Notebook : MonoBehaviour //shows recorded testimony
                 container.AddComponent<Selectable>();
                 container.AddComponent<Testimony>();
                 container.GetComponent<Testimony>().id = id;
-
+                Debug.Log(container.GetComponent<Testimony>().id + "container id");
                 container.GetComponent<Image>().color = Color.black;
 
                 idToContainer.Add(id, container);

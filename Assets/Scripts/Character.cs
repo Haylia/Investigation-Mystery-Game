@@ -157,6 +157,7 @@ public class Character : MonoBehaviour
 
         transform.Find("Canvas/CharacterMenu/Accuse").gameObject.GetComponent<Button>().enabled = true;
         //currentEvidence = "";
+        Debug.Log("accuse end called");
     }
 
     public void recordTestimony()
@@ -176,6 +177,8 @@ public class Character : MonoBehaviour
                 options.AddRange(flagToDialogueOptions[flag]);
             }
         }
+
+        options.AddRange(flagToDialogueOptions["default"]);
 
         if (options.Count == 0)
         {
