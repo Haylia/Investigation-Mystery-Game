@@ -12,10 +12,10 @@ public static class TestimonyMasterList
     public static string MaidDefHost = "What were you feelings towards Heather?";
     public static string MaidDefLocation = "Where were you at the time of the murder?";
     public static string MaidDefThoughts = "Is there anything else you want to tell me?";
-    public static string MaidSecrets = ""; //#SpouseHostSecrets
+    public static string MaidSecrets = "Silvia says you are lying about telling Heather"; //#SpouseHostSecrets
     //Maid dialogue responses (ids from Miro board)
     public static string MaidIntro = "I am Margaret the Maid, and I am responsible for the upkeep of this house. If you need anything done do ask me.";
-    public static string MaidLying = "";
+    public static string MaidLying = "I am not! I would never!";
     public static string MaidHost = @"I’ve been working in this house for the last 7 years and I know Heather on a personal level. 
                                     I believe this family looks out for me back as I do for them";
     public static string MaidLocation = "I was in my room in the Servants' Quarters";

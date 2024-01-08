@@ -87,7 +87,7 @@ public class Talk : MonoBehaviour
         ////////////////////////////////////////////reemeber to change name
         if (character.gameObject.GetComponent<CharacterInfo>().getName() == "Margaret" && option == TestimonyMasterList.MaidDefThoughts)
         {
-            GameObject.Find("Protag").GetComponent<ProtagInfo>().pickUpItem(GameObject.Find("NoticeOfDismissal"));
+            GameObject.Find("Protag").GetComponent<ProtagInfo>().pickUpItem(GameObject.Find("Notice"));
         }
         dialogue();
         dialogeBox.transform.Find("Record").gameObject.SetActive(true);
