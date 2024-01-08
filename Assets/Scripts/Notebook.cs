@@ -75,7 +75,7 @@ public class Notebook : MonoBehaviour //shows recorded testimony
     {
         //GameObject pagesDisplay = GameObject.Find("PageDisplay");
         Debug.Log("pages: " + nameToPage.Count);
-        if (currentPage <= nameToPage.Count) // show 1 page
+        if (currentPage == nameToPage.Count -1) // show 1 page
         {
             var p1 = nameToPage[characterNames[currentPage]];
             p1.SetActive(true);
@@ -89,12 +89,17 @@ public class Notebook : MonoBehaviour //shows recorded testimony
             p1.SetActive(true);
             p1.transform.SetParent(pageDisplay.transform);
             var p2 = nameToPage[characterNames[currentPage + 1]];
+            nextPage.SetActive(true);
             p2.SetActive(true);
             p2.transform.SetParent(pageDisplay.transform);
         }
         if (currentPage == 0)
         {
             previousPage.SetActive(false);
+        }
+        if(currentPage >= nameToPage.Count)
+        {
+            nextPage.SetActive(false);
         }
 
     }
@@ -207,15 +212,15 @@ public class Notebook : MonoBehaviour //shows recorded testimony
             if (!idToContainer.ContainsKey(id))
             {
                 //TextMeshPro displayId = new TextMeshPro();
-                GameObject displayId = new GameObject();
-                displayId.AddComponent<TextMeshProUGUI>();
+                //GameObject displayId = new GameObject();
+                //displayId.AddComponent<TextMeshProUGUI>();
                 //displayId.GetComponent<TextMeshProUGUI>().SetText(testimonyIDToDisplayID[id]);
-                displayId.GetComponent<TextMeshProUGUI>().SetText(id);
+                //displayId.GetComponent<TextMeshProUGUI>().SetText(id);
                 //TextMeshPro testimonyContent = new TextMeshPro();
                 GameObject testimonyContent = new GameObject();
                 testimonyContent.AddComponent<TextMeshProUGUI>();
                 testimonyContent.GetComponent<TextMeshProUGUI>().SetText(testimony[id]);
-                testimonyContent.GetComponent<TextMeshProUGUI>().fontSize = 20;
+                testimonyContent.GetComponent<TextMeshProUGUI>().fontSize = 16;
 
                 GameObject container = new GameObject();
                 container.AddComponent<RectTransform>();
@@ -223,7 +228,7 @@ public class Notebook : MonoBehaviour //shows recorded testimony
                 container.AddComponent<Image>();
                 container.AddComponent<VerticalLayoutGroup>();
 
-                displayId.transform.SetParent(container.transform);
+                //displayId.transform.SetParent(container.transform);
                 testimonyContent.transform.SetParent(container.transform);
 
                 container.AddComponent<Selectable>();

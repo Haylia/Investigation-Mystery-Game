@@ -51,8 +51,8 @@ public static class TestimonyMasterList
     public static string PartnerSharesReason = "I found evidence that you wanted Heather's part in the business. What do you have to say to this?"; //#SpousePartner
     public static string PartnerSharesHost = "And what happened?"; //#SpousePartner
 
-    public static string PartnerIntro = "I’m Bernard, Co-owner of {HOST BUSINESS NAME}. As an entrepreneur, I would consider {HOST BUSINESS NAME} to be my best…and only…success. I live across town with my family";
-    public static string PartnerHost = "We met around 10 years ago now, in a bar in the next city. I had just declared bankruptcy, she had just bombed a pitch meeting. We hit it off, came up with the {BUSINESS} in a drunken stupor, and the rest is history. I particularly respect her work ethic. She did well for herself and Silvia.";
+    public static string PartnerIntro = "I’m Bernard, Co-owner of a business with Heather. As an entrepreneur, I would consider it to be my best…and only…success. I live across town with my family";
+    public static string PartnerHost = "We met around 10 years ago now, in a bar in the next city. I had just declared bankruptcy, she had just bombed a pitch meeting. We hit it off, came up with the business in a drunken stupor, and the rest is history. I particularly respect her work ethic. She did well for herself and Silvia.";
     public static string PartnerLocation = "I spent most of the evening in the parlour, with the exception of sitting down for dinner of course! ";
     public static string PartnerThoughts = "All I'll add is Silvia and Heather must have been doing better than me, I'm not sure how but they make their income go further than I do for my family. I put it down to clever investments.";
     public static string SharesReason = "Well... It doesn't exactly paint me in the best light, but in the interest of the truth and justice I'll lay it out for you. I wanted Heather's share of our business, to keep it in my family. Don't get me wrong though, thats not motive for me to kill Heather!";
