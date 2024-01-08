@@ -10,6 +10,7 @@ public class Inventory : MonoBehaviour // shows picked up items
     private ProtagInfo protagInfo;
     private GameObject inventoryView;
     private GameObject inventoryContent;
+    private EvidenceSelect e;
 
     List<GameObject> inventory = new List<GameObject>();
     List<string> added = new List<string>();
@@ -68,13 +69,24 @@ public class Inventory : MonoBehaviour // shows picked up items
 
                 //Destroy(copy.GetComponent<SpriteRenderer>().sprite);
                 added.Add(item.GetComponent<ItemInfo>().getName());
+
+
             }
+
+
 
         }
         inventoryView.SetActive(true);
         inventoryContent.SetActive(true);
+        
 
 
+    }
+
+    private void selectItem(string itemName)
+    {
+        e = GameObject.Find("EvidenceSelect").GetComponent<EvidenceSelect>(); //should only find the current active one
+        e.selected(itemName);
     }
 
     private void click(GameObject copy)
@@ -82,10 +94,12 @@ public class Inventory : MonoBehaviour // shows picked up items
         Debug.Log("inventory item clicked");
 
         GameObject itemPanel;
+        GameObject select;
 
         if (copy.transform.childCount > 0)
         {
             itemPanel = copy.transform.Find("ItemPanel").gameObject;
+            select = copy.transform.Find("Select").gameObject;
         }
         else
         {
@@ -123,6 +137,21 @@ public class Inventory : MonoBehaviour // shows picked up items
             b.transform.localPosition = Vector3.zero;
             itemPanel.transform.localPosition = Vector3.zero;
             //itemPanel.AddComponent<Canvas>();
+
+            select = new GameObject();
+            select.name = "Select";
+            select.AddComponent<Button>();
+            //select.AddComponent<Image>();
+            //select.GetComponent<RectTransform>().sizeDelta = new Vector2(160, 30);
+            select.GetComponent<Button>().onClick.AddListener(delegate { selectItem(copy.GetComponent<ItemInfo>().getName()); });
+            GameObject selectText = new GameObject();
+            selectText.AddComponent<TextMeshProUGUI>();
+            selectText.GetComponent<TextMeshProUGUI>().SetText("Select");
+
+            selectText.transform.SetParent(select.transform);
+            selectText.transform.localPosition = Vector3.zero;
+            select.transform.SetParent(copy.transform);
+            select.transform.localPosition = Vector3.zero;
         }
 
         if (itemPanel.activeSelf)
@@ -135,6 +164,7 @@ public class Inventory : MonoBehaviour // shows picked up items
             copy.GetComponent<Item>().Inspect();
             itemPanel.SetActive(true);
             itemPanel.transform.Find("bg/ItemText").GetComponent<TextMeshProUGUI>().SetText(copy.GetComponent<Item>().currentInspect);
+            select.SetActive(protagInfo.accusing);
         }
     }
 }

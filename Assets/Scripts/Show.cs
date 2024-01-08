@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Show : MonoBehaviour
 {
@@ -39,10 +40,12 @@ public class Show : MonoBehaviour
         showView.SetActive(true);
         closeButton.SetActive(true);
         //show view active
+        Debug.Log("show");
     }
 
     public void showItem(string itemName)
     {
+        Debug.Log("showItem");
         character.show(itemName);
         showView.SetActive(false);
         dialogueBox.GetComponent<TextMeshProUGUI>().SetText(character.currentResponse);
@@ -51,21 +54,47 @@ public class Show : MonoBehaviour
 
     void loadItems()
     {
+        Debug.Log("loadItems");
         foreach (GameObject item in inventory)
         {
-            if (!added.Contains(item.GetComponent<ItemInfo>().getName())) {
+            if (!added.Contains(item.GetComponent<ItemInfo>().getName()))
+            {
+                GameObject canvas = new GameObject();
+                canvas.AddComponent<VerticalLayoutGroup>();
+                //canvas.GetComponent<VerticalLayoutGroup>().childControlHeight = false;
+                //canvas.GetComponent<VerticalLayoutGroup>().childControlWidth = false;
+
+                GameObject i = new GameObject();
+                i.AddComponent<TextMeshProUGUI>();
+                i.GetComponent<TextMeshProUGUI>().SetText(item.GetComponent<ItemInfo>().getName());
+                i.GetComponent<TextMeshProUGUI>().fontSize = 12;
                 GameObject copy = new GameObject();
                 copy = Instantiate(item);
-                Destroy(copy.GetComponent<ObjectScript>());
-                copy.AddComponent<ShowItem>();
-                copy.GetComponent<ShowItem>().show = this;
-                copy.transform.SetParent(showContent.transform);
+                foreach (Transform child in copy.transform)
+                {
+                    child.gameObject.SetActive(false);
+                    Destroy(child.gameObject);
+                }
+                //Destroy(copy.GetComponent<ObjectScript>());
+                Sprite s = copy.GetComponent<SpriteRenderer>().sprite;
+                copy.AddComponent<Image>();
+                copy.GetComponent<Image>().sprite = s;
+
+
+                copy.AddComponent<Button>();
+                copy.GetComponent<Button>().onClick.AddListener(delegate { showItem(item.GetComponent<ItemInfo>().getName()); });
+
+                copy.transform.SetParent(canvas.transform);
+                i.transform.SetParent(canvas.transform);
+                canvas.transform.SetParent(showContent.transform);
+
+                //Destroy(copy.GetComponent<SpriteRenderer>().sprite);
                 added.Add(item.GetComponent<ItemInfo>().getName());
             }
         }
     }
 
-    void closeShow()
+    public void closeShow()
     {
         showView.SetActive(false);
         closeButton.SetActive(false);

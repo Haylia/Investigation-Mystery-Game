@@ -47,7 +47,7 @@ public class ObjectScript : MonoBehaviour
             Debug.Log(item.currentInspect);
             transform.Find("Canvas/ItemInfo/ObjectDesc").gameObject.GetComponent<TextMeshProUGUI>().SetText(item.currentInspect);
             transform.Find("Canvas/ItemInfo/ObjectName").gameObject.GetComponent<TextMeshProUGUI>().SetText(itemInfo.getName());
-
+            Debug.Log(itemInfo.getCanPickUp());
             transform.Find("Canvas/ItemInfo/PickUp").gameObject.SetActive(itemInfo.getCanPickUp());
 
             transform.Find("Canvas/ItemInfo/Present").gameObject.SetActive(protageInfo.accusing);

@@ -6,7 +6,7 @@ public class BankStatementInfo : ItemInfo
 {
     string itemName = "BankStatement";
 
-    public new bool canPickUp = true;
+    public bool canPickUp = true;
     public bool pickedUp = false;
 
     bool inspected = false;
