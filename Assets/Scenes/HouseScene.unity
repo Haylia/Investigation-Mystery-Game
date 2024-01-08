@@ -7426,9 +7426,52 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 884403837}
     m_Modifications:
+    - target: {fileID: 2696502942198337146, guid: 942371ef6a8f2bf4db51c78d07401b8b, type: 3}
+      propertyPath: m_text
+      value: "It is a crisp winter night in early 1900s london.\nYou, a private eye
+        detective, are strolling the streets of mayfair, where you happen upon a
+        lively looking\nhouse, lighting up the otherwise silent street like a beacon.
+        As you pass the front door, you are subjected to \na blood curdling scream,
+        followed up with shouts from multiple members of the household.\nAs a concerned
+        citizen, and equipped with the knowledge that you may be able to help, you
+        step inside.\n\n\n\nThe goal is to identify a suspect for the murder and
+        successfully accuse them.\r\nEach of the characters can be accused at any
+        point but evidence is needed for it to be successful.\r\nEvidence can be
+        in the form of Items and Testimony that have been recorded in your Inventory
+        and Notebook respectfully.\r\nItems can be Recorded. Characters can Talk
+        or be Shown Items. The Responses from these interactions can be Recorded.\r\nSometimes
+        Recording Items and Testimony can unlock new Talk options or update previous
+        responses and item descriptions.\n\n\n\nOnce you think you have enough evidence
+        you can Accuse a character.\r\nDuring the accusation you will be asked to
+        present evidence against the character.\r\nIf, in a row, a certain amount
+        of opportunities to present evidence pass and the presented evidence does
+        not support your case or only minimally supports it, the the accusation fails.\r\nOnce
+        you have provided enough evidence to support your case, the accusation is
+        successful.\r\nEach character can only be accused once and you have two chances
+        to accuse. Previously accused characters cannot be interacted with after
+        a failed accusation.\r\n \r\nThe ending is dependent on the outcome of your
+        accusation.\n\n\nControls: WASD or arrow keys to move. Space bar to interact
+        with staircases. Mouse click to interact with characters and items."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2696502942198337146, guid: 942371ef6a8f2bf4db51c78d07401b8b, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2696502942198337146, guid: 942371ef6a8f2bf4db51c78d07401b8b, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5262205784538186739, guid: 942371ef6a8f2bf4db51c78d07401b8b, type: 3}
       propertyPath: m_Name
       value: Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 6718100255946516853, guid: 942371ef6a8f2bf4db51c78d07401b8b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -92.8204
+      objectReference: {fileID: 0}
+    - target: {fileID: 6718100255946516853, guid: 942371ef6a8f2bf4db51c78d07401b8b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4.219116
       objectReference: {fileID: 0}
     - target: {fileID: 7844406077491317083, guid: 942371ef6a8f2bf4db51c78d07401b8b, type: 3}
       propertyPath: m_Pivot.x
@@ -7492,7 +7535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7844406077491317083, guid: 942371ef6a8f2bf4db51c78d07401b8b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.0002746582
+      value: -0.00024414062
       objectReference: {fileID: 0}
     - target: {fileID: 7844406077491317083, guid: 942371ef6a8f2bf4db51c78d07401b8b, type: 3}
       propertyPath: m_AnchoredPosition.y
