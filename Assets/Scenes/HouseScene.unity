@@ -7295,12 +7295,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 214082901927422765, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 214082901927422765, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 214082901927422765, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.01
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 214082901927422765, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.2
+      value: 22.4
       objectReference: {fileID: 0}
     - target: {fileID: 214082901927422765, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7348,11 +7356,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4391276526118936102, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.00006412715
+      value: -0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 4391276526118936102, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00067700073
+      value: -0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 4502736132519856019, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -7365,6 +7373,34 @@ PrefabInstance:
     - target: {fileID: 4502736132519856019, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201677069885847459, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
+      propertyPath: m_Size.x
+      value: 4.9758334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201677069885847459, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
+      propertyPath: m_Size.y
+      value: 4.58072
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201677069885847459, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.012345552
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201677069885847459, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.026124954
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201677069885847459, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201677069885847459, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 5.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201677069885847459, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 5.12
       objectReference: {fileID: 0}
     - target: {fileID: 6474272650260607441, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -7390,6 +7426,10 @@ PrefabInstance:
       propertyPath: sfxSrc
       value: 
       objectReference: {fileID: 393361810}
+    - target: {fileID: 8378411963668224327, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4289c7b9775fa194eb6fcfa2f715a60c, type: 3}
     - target: {fileID: 8528191367975587130, guid: adbd3c4cff65e1d49b8066cda9a0414e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -7451,7 +7491,8 @@ PrefabInstance:
         to accuse. Previously accused characters cannot be interacted with after
         a failed accusation.\r\n \r\nThe ending is dependent on the outcome of your
         accusation.\n\n\nControls: WASD or arrow keys to move. Space bar to interact
-        with staircases. Mouse click to interact with characters and items."
+        with staircases. Mouse click to interact with characters and items.\nClick
+        to begin!"
       objectReference: {fileID: 0}
     - target: {fileID: 2696502942198337146, guid: 942371ef6a8f2bf4db51c78d07401b8b, type: 3}
       propertyPath: m_fontSize
