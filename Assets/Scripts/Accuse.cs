@@ -17,17 +17,21 @@ public class Accuse : MonoBehaviour
     private GameObject protagCanvas;
     private GameObject explain;
     private ProtagInfo protagInfo;
+    private GameObject endAccButton;
     // Start is called before the first frame update
     void Start()
     {
         character = gameObject.GetComponentInParent<Character>();
         dialogeBox = character.transform.Find("Canvas/CharacterMenu/DialogueBox").gameObject;
         evidenceSelect = transform.Find("EvidenceSelect").gameObject;
+        endAccButton = transform.Find("EndAccusation").gameObject;
+
         waiting = false;
         protagMenu = GameObject.Find("ProtagMenu");
         explain = GameObject.Find("ExplainCanvas");
         protagInfo = GameObject.Find("Protag").GetComponent<ProtagInfo>();
         protagCanvas = GameObject.Find("ProtagCanvas");
+        
     }
 
     // Update is called once per frame
@@ -47,6 +51,8 @@ public class Accuse : MonoBehaviour
         pressureNow = 0;
         turns = 0;
 
+        endAccButton.SetActive(true);
+
         evidenceSelect.SetActive(false);
         character.transform.Find("Canvas/CharacterMenu/Talk").gameObject.SetActive(false);
         character.transform.Find("Canvas/CharacterMenu/Show").gameObject.SetActive(false);
@@ -60,7 +66,7 @@ public class Accuse : MonoBehaviour
     IEnumerator accuseLoop()
     {
         //ends if player does not increase pressure fast enough or pressure theshold reached
-        while (turns < 4 || pressureNow > 5)
+        while (turns < 4 && pressureNow < 6)
         {
             //evidence selection
             evidenceSelect.SetActive(true);
@@ -112,6 +118,7 @@ public class Accuse : MonoBehaviour
         }
 
         GameObject.Find("SceneMaster").GetComponent<SceneMaster>().checkEndingReached();
+        Debug.Log("accuse end");
     }
 
     private void explainStart()
@@ -140,7 +147,14 @@ public class Accuse : MonoBehaviour
 
     public void retractAccuse()
     {
+        Debug.Log("accusation retracted");
         //character.retractAccusation();
         turns = 4;
+        waiting = false;
+        protagInfo.explaining = false;
+        character.responding = false;
+        gameObject.SetActive(false);
+        character.transform.Find("Canvas/CharacterMenu/CloseCMenu").gameObject.SetActive(true);
+        protagMenu.SetActive(false);
     }
 }

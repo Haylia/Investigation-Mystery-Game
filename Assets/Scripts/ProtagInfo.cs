@@ -332,7 +332,7 @@ public class ProtagInfo : MonoBehaviour
                         else
                         {
                             currentAccuseDialogue = "THIS PROVES IT WAS YOU!!! ... oh ... ummm ... maybe not...";
-                            character.GetComponent<CharacterInfo>().decreasePressure(-1);
+                            // character.GetComponent<CharacterInfo>().decreasePressure(1);
                         }
                         presentedEvidence.Add(evidence);
                     }
@@ -345,7 +345,7 @@ public class ProtagInfo : MonoBehaviour
                     if (!allFlags.ContainsKey("hasMaidFamilyPhoto"))
                     {
                         currentAccuseDialogue = "THIS PROVES IT WAS YOU!!! ... oh ... ummm ... maybe not...";
-                        character.GetComponent<CharacterInfo>().decreasePressure(-1);
+                        // character.GetComponent<CharacterInfo>().decreasePressure(-1);
                     }
                     else if (!allFlags.ContainsKey("hasLedger&BankStatement") && presentedEvidence.Contains("MaidFamilyPhoto"))
                     {
@@ -372,7 +372,7 @@ public class ProtagInfo : MonoBehaviour
                     if (!allFlags.ContainsKey("hasNewspaper"))
                     {
                         currentAccuseDialogue = "THIS PROVES IT WAS YOU!!! ... oh ... ummm ... maybe not...";
-                        character.GetComponent<CharacterInfo>().decreasePressure(-1);
+                        // character.GetComponent<CharacterInfo>().decreasePressure(-1);
                     }
                     else if (!allFlags.ContainsKey("hasLedger&BankStatement") && presentedEvidence.Contains("Newspaper"))
                     {
@@ -404,7 +404,7 @@ public class ProtagInfo : MonoBehaviour
             else
             {
                 currentAccuseDialogue = "THIS PROVES IT WAS YOU!!! ... oh ... ummm ... maybe not...";
-                character.GetComponent<CharacterInfo>().decreasePressure(-1);
+                // character.GetComponent<CharacterInfo>().decreasePressure(-1);
                 presentedEvidence.Add(evidence);
             }
         }
