@@ -64,6 +64,7 @@ public class Talk : MonoBehaviour
         }
 
 
+
         foreach (string op in options)
         {
             GameObject b = new GameObject();
@@ -71,6 +72,7 @@ public class Talk : MonoBehaviour
             b.AddComponent<Button>();
             b.AddComponent<TextMeshProUGUI>();
             b.GetComponent<TextMeshProUGUI>().SetText(op);
+            b.GetComponent<TextMeshProUGUI>().fontSize = 12;
             b.GetComponent<Button>().onClick.AddListener(delegate { optionSelected(op); });
             //b.transform.SetParent(dialogueOptions.transform.Find("/Viewport/Content"));
             b.transform.SetParent(dialogueOptions.transform);

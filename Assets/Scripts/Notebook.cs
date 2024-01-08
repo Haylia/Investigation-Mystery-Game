@@ -93,7 +93,7 @@ public class Notebook : MonoBehaviour //shows recorded testimony
             p2.SetActive(true);
             p2.transform.SetParent(pageDisplay.transform);
         }
-        if (currentPage == 0)
+        if (currentPage <= 1)
         {
             previousPage.SetActive(false);
         }
@@ -143,7 +143,7 @@ public class Notebook : MonoBehaviour //shows recorded testimony
                 page.AddComponent<CanvasRenderer>();
                 page.AddComponent<Image>();
                 page.AddComponent<VerticalLayoutGroup>();
-                page.AddComponent<Scrollbar>();
+                page.AddComponent<ScrollRect>();
                 page.GetComponent<Image>().color = Color.black;
       
 
@@ -153,6 +153,16 @@ public class Notebook : MonoBehaviour //shows recorded testimony
                 page.SetActive(false);
                 characterNames.Add(character.GetComponent<CharacterInfo>().getName());
                 Debug.Log("new page for " + character.GetComponent<CharacterInfo>().getName() + "at " + page);
+
+                GameObject pageContent = new GameObject();
+                pageContent.name = "PageContent";
+                pageContent.transform.SetParent(page.transform);
+                pageContent.AddComponent<VerticalLayoutGroup>();
+
+                page.GetComponent<ScrollRect>().content = pageContent.GetComponent<RectTransform>();
+                page.GetComponent<ScrollRect>().horizontal = false;
+                page.GetComponent<ScrollRect>().vertical = true;
+                page.GetComponent<ScrollRect>().scrollSensitivity = 20;
             }
             else
             {
@@ -163,9 +173,10 @@ public class Notebook : MonoBehaviour //shows recorded testimony
 
             foreach (string id in characterToTestimonyID[character])
             {
-                if (idToContainer[id].transform.parent != page.transform)
+                if (idToContainer[id].transform.parent != page.transform.Find("PageContent"))
                 {
-                    idToContainer[id].transform.SetParent(page.transform);
+                    idToContainer[id].transform.SetParent(page.transform.Find("PageContent"));
+                    //idToContainer[id].GetComponent<RectTransform>().sizeDelta = new Vector2 (page.transform.Find("PageContent").GetComponent<RectTransform>().sizeDelta.x, 0);
                 }               
             }
 

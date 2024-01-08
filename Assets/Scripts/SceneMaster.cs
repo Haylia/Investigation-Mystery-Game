@@ -53,7 +53,7 @@ public class SceneMaster : MonoBehaviour
     {
         //if statement to decide text
         string endText;
-        if(e == failed)
+        if(e == "failed")
         {
             endText = "You were ridiculed and removed from the scene... try looking at the evidence more closely!";
         }
