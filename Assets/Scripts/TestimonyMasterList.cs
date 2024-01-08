@@ -17,12 +17,12 @@ public static class TestimonyMasterList
     public static string MaidIntro = "I am Margaret the Maid, and I am responsible for the upkeep of this house. If you need anything done do ask me.";
     public static string MaidLying = "I am not! I would never!";
     public static string MaidHost = @"I’ve been working in this house for the last 7 years and I know Heather on a personal level. 
-                                    I believe this family looks out for me back as I do for them";
+    I believe this family looks out for me back as I do for them";
     public static string MaidLocation = "I was in my room in the Servants' Quarters";
     public static string Firing = @"I found this hidden earlier when I was cleaning. I showed it to Heather as I thought I would be looking out for them.
-                                   They seemed so very upset by Silvia.
-                                    I also heard Silvia talking on the phone about something called a bee settlement? I Silvia didn't hurt any bees!
-                                   *** YOU AQUIRED [NOTICE OF DISMISSAL]";
+    They seemed so very upset by Silvia.
+    I also heard Silvia talking on the phone about something called a bee settlement? I Silvia didn't hurt any bees!
+    *** YOU AQUIRED [NOTICE OF DISMISSAL]";
     //Maid show responses
     public static string MaidDenial = "These are just some random newspapers they have nothing to do with me."; //SHOW Newspaper
 
@@ -115,21 +115,21 @@ public static class TestimonyMasterList
 
 
     public static string SpouseIntro = @"Oh my turn darling? I'm Heather's wife Silvia! We've been married 25 years as of last weekend
-                                        hence the party I co-hosted! Truly a drag that such a wonderful night has been ruined.";
+    hence the party I co-hosted! Truly a drag that such a wonderful night has been ruined.";
     public static string SpouseHostDefault = @"Our relationship was just dandy! As with all couples we had our little tiffs but 
-                                                Heather was truly all I could ask for in a spouse";
+    Heather was truly all I could ask for in a spouse";
     public static string SpouseHostSecrets = @"Oh the firing...No I didn't tell Heather. With my expertise and experience I was hoping
-                                                to find another job and put on a show about wanting a fresh environment"; //#FiredHost
+    to find another job and put on a show about wanting a fresh environment"; //#FiredHost
     public static string SpouseLocation = @"Well I was in the parlour with the rest of the party guests, and retired to the study early to
-                                            finish off some work I started earlier";
+    finish off some work I started earlier";
     public static string SpousePartner = "Heather told me recently that Bernard over there tried to buy out her share in the business.";
     public static string HostNecklace = @"I noticed that Heather's Diamond necklace that she was wearing today was missing. If you come across that
-                                           do let me know as I am quite worried!";
+    do let me know as I am quite worried!";
     public static string HostReason = "Ah Heather told me she was feeling unwell and wanted to lie down for a bit. She assured me she would be okay and would come back soon";
     public static string HostTiming = "Well, I left the room first but as I say she told me she was going to lie down. I didn't see or hear her leave as I wasn't there. I didn't see any staff while I was walking about the house";
     public static string StaffBreak = "On the way out, I told the butler to put the rest of the staff on a break as they had been working ever so hard for the party this evening.";
     public static string EmbezzlementReason = @"Well, I got such a kick out of doing it the first time that I just had to keep doing
-                                                it. The rush I got was simply unparalled and the thist to keep going remained unquenched";
+    it. The rush I got was simply unparalled and the thist to keep going remained unquenched";
     public static string EmbezzlementHost = "Oh Heather had no idea! That was all part of the fun!";
     public static string FiredDefault = "That note means nothing. Just a fake document to make me look bad.";
     public static string FiredReason = "Well obviously you know I was embezzling... why even ask the question?"; //#EmbezzlementReason

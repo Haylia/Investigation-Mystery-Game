@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class Protag : MonoBehaviour
@@ -60,10 +61,21 @@ public class Protag : MonoBehaviour
 
     }
 
-    private void OnMouseDown()
+    private IEnumerator OnMouseDown()
     {
-        sfxSrc.PlayOneShot(sfxSrc.clip, 0.8f);
-        openMenu();
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+
+        }
+        else
+        {
+
+            sfxSrc.PlayOneShot(sfxSrc.clip, 0.8f);
+
+            yield return new WaitForEndOfFrame();
+
+            openMenu();
+        }
     }
 
     public void openNotebook()
