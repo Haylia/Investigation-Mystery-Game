@@ -4,7 +4,8 @@ using UnityEngine;
 
 public abstract class ItemInfo : MonoBehaviour
 {
-    public bool canPickUp;
+    public abstract bool getCanPickUp();
+    public abstract void setCanPickUp(bool b);
     public abstract string getName();
 
     public abstract Dictionary<string, string> getAllInspect();

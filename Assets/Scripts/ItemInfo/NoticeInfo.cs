@@ -38,6 +38,16 @@ public class NoticeInfo : ItemInfo
         return itemName;
     }
 
+    public override bool getCanPickUp()
+    {
+        return canPickUp;
+    }
+
+    public override void setCanPickUp(bool b)
+    {
+        canPickUp = b;
+    }
+
     override public Dictionary<string, string> getAllInspect()
     {
         return allInspect;
